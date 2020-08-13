@@ -1,0 +1,17 @@
+{
+  "name": "mktzap-automation",
+  "version": "1.0.0",
+  "description": "Automatização do Mktzap - Smoke",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress": "cypress open"
+  },
+  "keywords": [],
+  "author": "Poliani Fidencio",
+  "license": "ISC",
+  "dependencies": {
+    "chance": "^1.1.5",
+    "cypress": "^4.5.0"
+  }
+}
