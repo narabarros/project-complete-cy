@@ -1,1 +1,4 @@
-Colocar o passo-a-passo para rodar o projeto na máquina local.
+npm install
+
+npm run cypress
+
