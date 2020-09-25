@@ -3,16 +3,16 @@
 export const userNameLord = '[data-test="wolologin-input-user_name"]';
 export const userPasswordLord = '[data-test="wolologin-input-password"]';
 export const btnLoginLord = '[data-test="wolologin-input-login"]';
-export const emailLord = 'elizabeth@gruponewway.com.br';
-export const senhaLord = '123';
+export const emailLord = 'sandra@gruponewway.com.br';
+export const senhaLord = '123456A';
 //Acesso como Gestor e Operador
 export const userName = '[data-test="login-input-user_name"]';
 export const userPassword = '[data-test="login-input-password"]';
 export const btnLogin = '[data-test="login-button-login"]';
-export const emailGestor = 'gestor2@teste.com';
-export const senhaGestor = '123456A';
-export const emailOperador ='operador1@teste.com';
-export const senhaOperador = '123456A';
+export const emailGestor = 'gestorsandra@gestor.com';
+export const senhaGestor = '123mudar';
+export const emailOperador ='operadorsandra@operador.com';
+export const senhaOperador = '123mudar';
 
 //URL de acesso
 export const baseUrl ='https://qa-poli.infranw.com.br';
