@@ -15,10 +15,10 @@ export const emailOperador ='operadorsandra@operador.com';
 export const senhaOperador = '123mudar';
 
 //URL de acesso
-export const baseUrl ='https://qa-thays.infranw.com.br/wolologin';
-export const baseUrlLord = 'https://qa-thays.infranw.com.br/wolologin';
-export const baseUrlLogado ='https://qa-thays.infranw.com.br/chat';
-export const baseUrlLogout = 'https://qa-thays.infranw.com.br/login';
+export const baseUrl ='https://qa-poli.infranw.com.br/login';
+export const baseUrlLord = 'https://qa-poli.infranw.com.br/wolologin';
+export const baseUrlLogado ='https://qa-poli.infranw.com.br/chat';
+export const baseUrlLogout = 'https://qa-poli.infranw.com.br/login';
 
 export default {
     userNameLord,
