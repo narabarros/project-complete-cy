@@ -25,7 +25,18 @@ describe('Envio de Ativo pelo sistema', () => {
     cy.get('[class="btn btn-primary"]').click();
     //clica no btn criar campanha
     cy.get('["class="form-control ng-pristine ng-empty ng-invalid ng-invalid-required ng-touched"]');
+<<<<<<< HEAD
     //precisa inserir a busca aqui
+=======
+    //- precisa inserir a busca aqui p selecionar o calendario c a data ---- incompleto
+    cy.get('["value="string:waweb""]').select('string:waweb');
+    //seleciona o canal whatsapp web
+    cy.get('["mktzap_bt_action_campaign_modal_select_mailing"]').click();
+    //clica no btn p inserir mailing
+    
+
+
+>>>>>>> 9b71485024f072dc26c418eaeeae8b930756fca0
 
    })
 })
