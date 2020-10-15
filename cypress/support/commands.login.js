@@ -59,9 +59,11 @@ Cypress.Commands.add("loginLord", (emailLord, senhaLord) => {
   cy.get(btnLoginLord)
     .click();
 
-  cy.wait(4000);
+  cy.wait(2000);
 
-  cy.url().should('contains', baseUrlLogado)
+  cy.visit(baseUrlLogado);
+
+ // cy.url().should('contains', baseUrlLogado)
  
 }) //Login Operador
 
