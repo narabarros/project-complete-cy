@@ -15,8 +15,6 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands.login'
-import './commands.empresa'
-import './commands.canal_whatsapp'
 import './commands.logout'
 
 //require('cypress-xpath')
