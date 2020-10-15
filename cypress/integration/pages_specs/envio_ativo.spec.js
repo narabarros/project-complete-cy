@@ -16,6 +16,7 @@ it.only ('Enviar um ativo sem responsavel para Whatsapp Web', () => {
     //Clicar no botão data-test="attendances-button-send_whatsapp_active"
     cy.get('[ng-show="!vm.waitingActiveModal"]').click();
     //Validar abertura da Modal de ativo
+    //cy.should('#formActiveWhatsapp > .modal-header > .text-center');
     //Selecionar o canal
     cy.get('#activeChannel').select('string:waweb_30');
     //Preencher o numero
