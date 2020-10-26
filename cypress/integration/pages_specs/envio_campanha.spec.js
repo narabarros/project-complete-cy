@@ -1,4 +1,4 @@
-/// <reference types="cypress" />
+<reference types="cypress" />
 
 import { emailGestor, senhaGestor } from '../../support/elements/login_po.js';
 import { baseUrl, baseUrlMaling } from '../../support/elements/urls_acessos.js';
