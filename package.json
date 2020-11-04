@@ -8,11 +8,12 @@
     "cypress": "cypress open"
   },
   "keywords": [],
-  "author": "Poliani Fidencio",
+  "author": "Nara Barros, Sandra Pavan",
   "license": "ISC",
   "dependencies": {
     "chance": "^1.1.5",
     "cypress": "",
+    "cypress-file-upload": "^4.1.1",
     "cypress-xpath": "^1.6.0"
   },
   "devDependencies": {}
