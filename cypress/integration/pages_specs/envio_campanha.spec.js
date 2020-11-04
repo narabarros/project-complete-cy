@@ -25,7 +25,7 @@ describe('Envio de Campanha pelo sistema', () => {
     //Acessando URL campanha
     cy.visit(baseUrlCampanha);
     //clica no btn criar campanha
-    cy.get('[class="btn btn-primary"]').click();
+    //cy.get('[class="btn btn-primary"]').click();
     //clica no btn criar campanha
     // cy.xpath('/html/body/div[1]/section[1]/div[1]/form/div[1]/div[3]div/input').click();
     //inspeciona calendario
