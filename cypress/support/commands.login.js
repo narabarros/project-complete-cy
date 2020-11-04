@@ -1,6 +1,3 @@
-//import 'cypress-file-upload';
-
-
 import { userPassword, btnLogin,userName, userNameLord, userPasswordLord, btnLoginLord, emailOperador, senhaOperador } from './elements/login_po';
 import {baseUrlLogado} from './elements/urls_acessos'
 
@@ -8,7 +5,7 @@ import {baseUrlLogado} from './elements/urls_acessos'
 Cypress.Commands.add("loginGestor", (emailGestor,senhaGestor) => { 
     
     cy.get(userName).type(emailGestor);   
-  
+      
     cy.get(userPassword).type(senhaGestor);
 
     cy.get(btnLogin).click();
