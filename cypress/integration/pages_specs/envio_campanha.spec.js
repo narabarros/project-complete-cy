@@ -5,7 +5,6 @@ import { emailGestor, senhaGestor } from '../../support/elements/login_po.js';
 import { baseUrl, baseUrlMaling, baseUrlCampanha } from '../../support/elements/urls_acessos.js';
 
 describe('Envio de Campanha pelo sistema', () => {
-
    beforeEach(() => {
       cy.visit(baseUrl);
       cy.loginGestor(emailGestor, senhaGestor);
@@ -17,25 +16,26 @@ describe('Envio de Campanha pelo sistema', () => {
       //realizando upload do arquivo para mailing
       const arquivoMailing = 'mailing.csv';
       const fileInputElement = '#upload';
-      cy.get(fileInputElement).attachFile({filePath: arquivoMailing, encoding: 'utf8'} );   
+      cy.get(fileInputElement).attachFile({filePath: arquivoMailing, encoding: 'utf8'} ); 
+      cy.get('.col > .btn').click();  
 
    })
 
-   it.only ('Enviar uma campanha pelo Whatsapp Web via Mailing', () => {
+  it.only ('Enviar uma campanha pelo Whatsapp Web via Mailing', () => {
     //Acessando URL campanha
-    cy.visit(baseUrlCampanha);
+   // cy.visit(baseUrlCampanha);
     //clica no btn criar campanha
     //cy.get('[class="btn btn-primary"]').click();
     //clica no btn criar campanha
     // cy.xpath('/html/body/div[1]/section[1]/div[1]/form/div[1]/div[3]div/input').click();
     //inspeciona calendario
-    cy.xpath('/html/body/div[7]/div[2]').each(($i,index,$list)=>{
-       var Date = $i.text()
-        if (Date == "15") {
-           cy.wrap($i).click()
-       }
+   // cy.xpath('/html/body/div[7]/div[2]').each(($i,index,$list)=>{
+    //   var Date = $i.text()
+     //   if (Date == "15") {
+     //      cy.wrap($i).click()
+     //  }
         //seleciona data de calendario (percorre todas as datas e seleciona a atual)
-    })
+   })
 
     //cy.get('["value="string:waweb"]').select('string:waweb');
     //seleciona o canal whatsapp web
@@ -49,6 +49,6 @@ describe('Envio de Campanha pelo sistema', () => {
     //clica no campo para preencher (quadrado)
    // cy.get('["mktzap_bt_action_campaign_save"]').click();
     //clica no btn p salvar campanha
-   })
+ //  })
 
 })
