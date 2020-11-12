@@ -16,39 +16,46 @@ describe('Envio de Campanha pelo sistema', () => {
       //realizando upload do arquivo para mailing
       const arquivoMailing = 'mailing.csv';
       const fileInputElement = '#upload';
-      cy.get(fileInputElement).attachFile({filePath: arquivoMailing, encoding: 'utf8'} ); 
-      cy.get('.col > .btn').click();  
+      cy.get(fileInputElement).attachFile({ filePath: arquivoMailing, encoding: 'utf8' });
+      cy.get('.col > .btn').click();
+      cy.url().should('contains', baseUrlMaling);
 
    })
 
-  it.only ('Enviar uma campanha pelo Whatsapp Web via Mailing', () => {
-    //Acessando URL campanha
-   // cy.visit(baseUrlCampanha);
-    //clica no btn criar campanha
-    //cy.get('[class="btn btn-primary"]').click();
-    //clica no btn criar campanha
-    // cy.xpath('/html/body/div[1]/section[1]/div[1]/form/div[1]/div[3]div/input').click();
-    //inspeciona calendario
-   // cy.xpath('/html/body/div[7]/div[2]').each(($i,index,$list)=>{
-    //   var Date = $i.text()
-     //   if (Date == "15") {
-     //      cy.wrap($i).click()
-     //  }
-        //seleciona data de calendario (percorre todas as datas e seleciona a atual)
+   it.only('Enviar uma campanha pelo Whatsapp Web via Mailing', () => {
+      //Acessando URL campanha
+      cy.visit(baseUrlCampanha);
+      //clica no btn criar campanha
+      cy.get('.page-container > .row > :nth-child(1) > .btn').click();
+      // Preencher titulo
+      cy.get('#title').type('Campanha Release');
+      // Seleciona a data posterior ao dia atual, para geração de data para campanha
+      cy.get('.col-md-4 > .form-group > .form-control').click();
+      var day = (new Date).getDay();
+      var month = (new Date).getMonth();
+      var year = (new Date).getMonth();
+      var lastDayMonth = (new Date(year, month + 1, 0));
+      var currentDate = (new Date(year, month, day));
+      if (lastDayMonth === currentDate) {
+         // muda mes
+         cy.get('.adp-next').click();
+      }
+      var day = 1, hour = 24;
+      var date = (new Date(Date.now() + day * hour * 60 * 60 * 1000)).toISOString().split('T')[0];
+      cy.get(`[d2=${date}]`).click();
+      //seleciona o canal whatsapp web
+      cy.get(':nth-child(2) > :nth-child(2) > .form-group > .form-control').select('string:waweb');
+      //clica no btn p inserir mailing
+      cy.get('.col-sm-7 > .btn').click();
+      //clica no mailing e seleciona
+      cy.get('tbody > :nth-child(1) > :nth-child(3) > .btn').click();
+      //clica no campo de texto
+      cy.get('[ga-event="mktzap_bt_action_campaign_add_text"]').click();
+      //clica no campo para preencher (quadrado)
+      cy.wait(1000);
+      cy.get('#whatsapp-message-0').type("teste_campanha_release");
+      //clica no btn p salvar campanha
+      cy.get(':nth-child(7) > .col-12 > .btn').click();
+      cy.url().should('contains', baseUrlMaling);
    })
-
-    //cy.get('["value="string:waweb"]').select('string:waweb');
-    //seleciona o canal whatsapp web
-    //cy.get('["mktzap_bt_action_campaign_modal_select_mailing"]').click();
-    ////clica no btn p inserir mailing
-    //cy.get('["mktzap_bt_action_campaign_select_mailing"]').click();
-    //clica no mailing e seleciona
-   // cy.get('["mktzap_bt_action_campaign_add_text"]').click();
-    //clica no campo de texto
-   // cy.get('["whatsapp-message-0"]').type("teste_campanha_release");
-    //clica no campo para preencher (quadrado)
-   // cy.get('["mktzap_bt_action_campaign_save"]').click();
-    //clica no btn p salvar campanha
- //  })
-
 })

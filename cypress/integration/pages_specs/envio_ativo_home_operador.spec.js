@@ -15,7 +15,6 @@ it('Enviar um ativo sem responsavel para Whatsapp Web', () => {
     cy.get('#dropdownMenuLink').click();
     //Clicar no botão data-test="attendances-button-send_whatsapp_active"
     cy.get('[ng-show="!vm.waitingActiveModal"]').click();
-    //Validar abertura da Modal de ativo
     //Selecionar o canal
     cy.get('#activeChannel').select('string:waweb_30');
     //Preencher o numero
@@ -31,8 +30,6 @@ it ('Enviar um ativo com responsavel para Whatsapp Web', () => {
     cy.get('#dropdownMenuLink').click();
     //Clicar no botão data-test="attendances-button-send_whatsapp_active"
     cy.get('[ng-show="!vm.waitingActiveModal"]').click();
-    //Validar abertura da Modal de ativo
-    //cy.get('#formActiveWhatsapp > .modal-header > .text-center').should('have.value', 'Nova mensagem - Whatsapp')
     //Setar o responsavel do atendimento para pessoa que esta criando ativo
     cy.get('.custom-control').click();
     //Selecionar o canal
