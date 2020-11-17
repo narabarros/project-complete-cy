@@ -1,5 +1,6 @@
 
-import './commands.login'
+import './pages/login'
+import './pages/mailing'
 
 require('cypress-xpath')
 

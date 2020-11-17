@@ -1,25 +1,16 @@
 require("cypress-xpath");
 require("cypress-file-upload");
 /// <reference types="cypress" />
-import { emailGestor, senhaGestor } from '../../support/elements/login_po.js';
-import { baseUrl, baseUrlMaling, baseUrlCampanha } from '../../support/elements/urls_acessos.js';
+
+import Login from '../../support/pages/login.js'
+import Mailing from '../../support/pages/mailing.js'
+import { emailGestor, senhaGestor } from '../../support/elements/login.js';
+import {baseUrlCampanha } from '../../support/elements/urls_acessos.js';
 
 describe('Envio de Campanha pelo sistema', () => {
    beforeEach(() => {
-      cy.visit(baseUrl);
-      cy.loginGestor(emailGestor, senhaGestor);
-      cy.visit(baseUrlMaling);
-      //clica incluir um mailing
-      cy.get('#link_add_new_mailing').click();
-      //preenche os dados para criar
-      cy.get('[id="title"]').type('testeRelease');
-      //realizando upload do arquivo para mailing
-      const arquivoMailing = 'mailing.csv';
-      const fileInputElement = '#upload';
-      cy.get(fileInputElement).attachFile({ filePath: arquivoMailing, encoding: 'utf8' });
-      cy.get('.col > .btn').click();
-      cy.url().should('contains', baseUrlMaling);
-
+      Login.loginGestor(emailGestor,senhaGestor);
+      Mailing.incluirMaling();
    })
 
    it.only('Enviar uma campanha pelo Whatsapp Web via Mailing', () => {
