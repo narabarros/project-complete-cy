@@ -1,7 +1,6 @@
 
-import './commands.login'
-
-require('cypress-xpath')
+import './pages/login.js'
+import './pages/mailing.js'
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     
