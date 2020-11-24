@@ -1,6 +1,7 @@
 
 import './pages/login.js'
 import './pages/mailing.js'
+import './pages/selecionarData.js'
 
 Cypress.on('uncaught:exception', (err, runnable) => {
     
