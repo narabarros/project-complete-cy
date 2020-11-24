@@ -1,10 +1,10 @@
 /// <reference types="cypress" />
-const el = require('../elements/campanha.js');
+const elCampanha = require('../elements/campanha.js');
 
 class SelecionarData{
-    selecionarDataCamapanha(){
+    selecionarDataCampanha(){
         // Seleciona a data posterior ao dia atual, para geração de data para campanha
-        cy.get(el.ELEMENTSCAMPANHA.dataCampanha).click();
+        cy.get(elCampanha.ELEMENTS_CAMPANHA.dataCampanha).click();
         var day = (new Date).getDay();
         var month = (new Date).getMonth();
         var year = (new Date).getMonth();
@@ -12,7 +12,7 @@ class SelecionarData{
         var currentDate = (new Date(year, month, day));
         if (lastDayMonth === currentDate) {
             // muda mes
-            cy.get(el.ELEMENTSCAMPANHA.nextData).click();
+            cy.get(elCampanha.ELEMENTS_CAMPANHA.nextData).click();
         }
         var day = 1, hour = 24;
         var date = (new Date(Date.now() + day * hour * 60 * 60 * 1000)).toISOString().split('T')[0];

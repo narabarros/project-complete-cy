@@ -1,5 +1,5 @@
 //URL de acesso
-export const ELEMENTSBASEURL = {
+export const ELEMENTS_BASE_URL = {
     baseUrl: 'https://qa-poli.infranw.com.br/login',
     baseUrlLord: 'https://qa-poli.infranw.com.br/wolologin',
     baseUrlLogado:'https://qa-poli.infranw.com.br/chat',

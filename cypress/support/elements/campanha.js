@@ -1,4 +1,4 @@
-export const ELEMENTSCAMPANHA = {
+export const ELEMENTS_CAMPANHA = {
     adicionarCampanha: '.page-container > .row > :nth-child(1) > .btn',
     tituloCampanha: '#title',
     tituloCampanhaTexto: 'Campanha Release',
