@@ -1,17 +1,18 @@
-import {baseUrlMaling } from '../../support/elements/urls_acessos.js';
-const el = require('../elements/mailing.js');
+require("cypress-file-upload");
+const elBase = require('../elements/urls_acessos.js')
+const elMailing = require('../elements/mailing.js');
 
 class Mailing{
   incluirMaling(){
-    cy.visit(baseUrlMaling);
+    cy.visit(elBase.ELEMENTSBASEURL.baseUrlMaling);
     //clica incluir um mailing
-    cy.get(el.ELEMENTSMAILING.adicionarMailing).click();
+    cy.get(elMailing.ELEMENTSMAILING.adicionarMailing).click();
     //preenche os dados para criar
-    cy.get(el.ELEMENTSMAILING.tituloCampanha).type(el.ELEMENTSMAILING.tituloCampanhaTexto);
+    cy.get(elMailing.ELEMENTSMAILING.tituloMailing).type(elMailing.ELEMENTSMAILING.tituloMailingTexto);
     //realizando upload do arquivo para mailing
-    cy.get(el.ELEMENTSMAILING.fileInputElement).attachFile({ filePath: el.ELEMENTSMAILING.arquivoMailing, encoding: 'utf8' });
-    cy.get(el.ELEMENTSMAILING.botaoSalvar).click();
-    cy.url().should('contains', baseUrlMaling);
+    cy.get(elMailing.ELEMENTSMAILING.fileInputElement).attachFile({ filePath: elMailing.ELEMENTSMAILING.arquivoMailing, encoding: 'utf8' });
+    cy.get(elMailing.ELEMENTSMAILING.botaoSalvar).click();
+    cy.url().should('contains', elBase.ELEMENTSBASEURL.baseUrlMaling);
   }
 }
 
