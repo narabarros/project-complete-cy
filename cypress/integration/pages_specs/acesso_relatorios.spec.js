@@ -1,6 +1,8 @@
 /// <reference types="cypress" />
 import { baseUrl } from '../../support/elements/urls_acessos.js';
 
+const elRelatorio = require ('../../support/elements/relatorios.js')
+
 
 describe('Envio de Ativo pelo sistema como operador - Pela tela inicial', () => {
 
@@ -15,7 +17,7 @@ describe('Envio de Ativo pelo sistema como operador - Pela tela inicial', () => 
         //clica no btn "relatorios"
         
         //-->extracao do relatorio analitico
-        cy.get("data-test=menu-a-report_bi_complete").click();
+        cy.get(elRelatorio.ELEMENTS_RELATORIOS.iniciarRelatorio).click();
         //clica no btn "relatorio completo novo"
         //alinhar o que seria inserido aqui
         cy.get("data-test=menu-a-report_analytic").click();
