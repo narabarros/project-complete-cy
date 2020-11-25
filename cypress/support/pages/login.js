@@ -3,29 +3,29 @@ const elLogin = require('../elements/login.js');
 
 class Login{
   loginGestor(){
-    cy.visit(elBase.ELEMENTSBASEURL.baseUrl)
-    cy.get(elLogin.ELEMENTSLOGIN.userName).type(elLogin.ELEMENTSLOGIN.emailGestor);   
-    cy.get(elLogin.ELEMENTSLOGIN.userPassword).type(elLogin.ELEMENTSLOGIN.senhaGestor);
-    cy.get(elLogin.ELEMENTSLOGIN.btnLogin).click();
+    cy.visit(elBase.ELEMENTS_BASE_URL.baseUrl)
+    cy.get(elLogin.ELEMENTS_LOGIN.userName).type(elLogin.ELEMENTS_LOGIN.emailGestor);   
+    cy.get(elLogin.ELEMENTS_LOGIN.userPassword).type(elLogin.ELEMENTS_LOGIN.senhaGestor);
+    cy.get(elLogin.ELEMENTS_LOGIN.btnLogin).click();
     cy.wait(2000);
-    cy.url().should('contains', elBase.ELEMENTSBASEURL.baseUrlLogado);
+    cy.url().should('contains', elBase.ELEMENTS_BASE_URL.baseUrlLogado);
   }
 
   loginLord(){ 
-    cy.visit(elBase.ELEMENTSBASEURL.baseUrlLord); 
-    cy.get(elLogin.ELEMENTSLOGIN.userNameLord).type(elLogin.ELEMENTSLOGIN.emailLord);     
-    cy.get(elLogin.ELEMENTSLOGIN.userPasswordLord).type(elLogin.ELEMENTSLOGIN.senhaLord);
-    cy.get(elLogin.ELEMENTSLOGIN.btnLoginLord).click();
+    cy.visit(elBase.ELEMENTS_BASE_URL.baseUrlLord); 
+    cy.get(elLogin.ELEMENTS_LOGIN.userNameLord).type(elLogin.ELEMENTS_LOGIN.emailLord);     
+    cy.get(elLogin.ELEMENTS_LOGIN.userPasswordLord).type(elLogin.ELEMENTS_LOGIN.senhaLord);
+    cy.get(elLogin.ELEMENTS_LOGIN.btnLoginLord).click();
     cy.wait(2000);
-    cy.url().should('contains', elBase.ELEMENTSBASEURL.baseUrlLogado)
+    cy.url().should('contains', elBase.ELEMENTS_BASE_URL.baseUrlLogado)
   }
 
   loginOperador(){
-    cy.visit(elBase.ELEMENTSBASEURL.baseUrl);
-    cy.get(elLogin.ELEMENTSLOGIN.userName).type(elLogin.ELEMENTSLOGIN.emailOperador);   
-    cy.get(elLogin.ELEMENTSLOGIN.userPassword).type(elLogin.ELEMENTSLOGIN.senhaOperador);
-    cy.get(elLogin.ELEMENTSLOGIN.btnLogin).click();
-    cy.url().should('contains', elBase.ELEMENTSBASEURL.baseUrlLogado)
+    cy.visit(elBase.ELEMENTS_BASE_URL.baseUrl);
+    cy.get(elLogin.ELEMENTS_LOGIN.userName).type(elLogin.ELEMENTS_LOGIN.emailOperador);   
+    cy.get(elLogin.ELEMENTS_LOGIN.userPassword).type(elLogin.ELEMENTS_LOGIN.senhaOperador);
+    cy.get(elLogin.ELEMENTS_LOGIN.btnLogin).click();
+    cy.url().should('contains', elBase.ELEMENTS_BASE_URL.baseUrlLogado)
   }
 }
 
