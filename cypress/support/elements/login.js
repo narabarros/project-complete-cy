@@ -1,4 +1,4 @@
-export const ELEMENTSLOGIN = {
+export const ELEMENTS_LOGIN = {
     //Acesso Operador e Gestor
     userName:'#login_fldLoginUserName',
     userPassword: '[data-test="login-input-password"]',
