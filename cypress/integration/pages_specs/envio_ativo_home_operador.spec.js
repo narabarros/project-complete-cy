@@ -1,60 +1,76 @@
 /// <reference types="cypress" />
 
-import { emailOperador, senhaOperador } from '../../support/elements/login_po.js';
-import { baseUrl } from '../../support/elements/urls_acessos.js';
+require("cypress-file-upload");
+import Login from '../../support/pages/login.js'
+const elAtivoHome = require('../../support/elements/ativo_home.js')
 
-describe('Envio de Ativo pelo sistema como operador - Pela tela inicial', () => {
 
-   beforeEach(() => {
-      cy.visit(baseUrl);
-      cy.loginOperador(emailOperador, senhaOperador);
-   })
+describe('Envio de Ativo como operador - Pela home', () => {
 
-it('Enviar um ativo sem responsavel para Whatsapp Web', () => {
-    //Clicar no botão data-test="attendances-button-send_active"
-    cy.get('#dropdownMenuLink').click();
-    //Clicar no botão data-test="attendances-button-send_whatsapp_active"
-    cy.get('[ng-show="!vm.waitingActiveModal"]').click();
-    //Selecionar o canal
-    cy.get('#activeChannel').select('string:waweb_30');
-    //Preencher o numero
-    cy.get('.col-9 > .form-control').type('14997142480');
-    //Digitar mensagem
-    cy.get('#activeMessage').type('Testes cypress');
-    //Clicar em Criar
-    cy.get('#formActiveWhatsapp > .modal-footer > .btn-secondary').click();    
+    before(() => {
+        Login.loginOperador();
     })
 
-it ('Enviar um ativo com responsavel para Whatsapp Web', () => {
-    //Clicar no botão data-test="attendances-button-send_active"
-    cy.get('#dropdownMenuLink').click();
-    //Clicar no botão data-test="attendances-button-send_whatsapp_active"
-    cy.get('[ng-show="!vm.waitingActiveModal"]').click();
-    //Setar o responsavel do atendimento para pessoa que esta criando ativo
-    cy.get('.custom-control').click();
-    //Selecionar o canal
-    cy.get('#activeChannel').select('string:waweb_30');
-    //Preencher o numero
-    cy.get('.col-9 > .form-control').type('14997142480');
-    //Digitar mensagem
-    cy.get('#activeMessage').type('Testes cypress');
-    //Clicar em Criar
-    cy.get('#formActiveWhatsapp > .modal-footer > .btn-secondary').click();
-    //Adicionou o card  
-})
+    it('Enviar um ativo sem responsavel para Whatsapp Web', () => {
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.botaoEnvioAtivo).click();
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.botaoAtivoWhats).click();
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.canalEnvioWhats).select('string:waweb_30');
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneWhats).type(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneTextowhats);
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.campoMensagemWhats).type(elAtivoHome.ELEMENTS_ATIVO_HOME.textoMensagem);
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.criarAtivo).click();
+        //cy.wait(1000);
+        //cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.spanMensagemSucesso).should('contains', elAtivoHome.ELEMENTS_ATIVO_HOME.mensagemSucesso);
+    })
 
-it.only('Enviar um ativo sem responsavel pelo Enterprise', () => {
-    //Clicar no botão data-test="attendances-button-send_active"
-    cy.get('#dropdownMenuLink').click();
-    //Clicar no botão data-test="attendances-button-send_whatsapp_active"
-    cy.get('[ng-show="!vm.waitingActiveModal"]').click();
-    //Selecionar o canal
-    cy.get('#activeChannel').select('string:waent_6');
-    //Preencher o numero
-    cy.get('.col-9 > .form-control').type('14997142480');
-    //Inserir um HSM para envio
-    cy.get('#activeHsmModel').select('number:4');
-    //Clicar em Criar
-    cy.get('#formActiveWhatsapp > .modal-footer > .btn-secondary').click();
-}) 
+    it('Enviar um ativo sem responsavel para Whatsapp Web com anexo', () => {
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.botaoEnvioAtivo).click();
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.botaoAtivoWhats).click();
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.canalEnvioWhats).select('string:waweb_30');
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneWhats).type(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneTextowhats);
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.campoMensagemWhats).type(elAtivoHome.ELEMENTS_ATIVO_HOME.textoMensagem);
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.fileInputElement)
+            .attachFile({ filePath: elAtivoHome.ELEMENTS_ATIVO_HOME.arquivos });
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.criarAtivo).click();
+    })
+
+    it('Enviar um ativo com responsavel para Whatsapp Web', () => {
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.botaoEnvioAtivo).click();
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.botaoAtivoWhats).click();
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.canalEnvioWhats).select('string:waweb_30');
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.responsavel).click({ force: true });
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneWhats).type(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneTextowhats);
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.campoMensagemWhats).type(elAtivoHome.ELEMENTS_ATIVO_HOME.textoMensagem);
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.criarAtivo).click();
+    })
+
+    it('Enviar um ativo com responsavel para Whatsapp Web com anexo', () => {
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.botaoEnvioAtivo).click();
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.botaoAtivoWhats).click();
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.canalEnvioWhats).select('string:waweb_30');
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.responsavel).click({ force: true });
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneWhats).type(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneTextowhats);
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.campoMensagemWhats).type(elAtivoHome.ELEMENTS_ATIVO_HOME.textoMensagem);
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.fileInputElement)
+            .attachFile({ filePath: elAtivoHome.ELEMENTS_ATIVO_HOME.arquivos });
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.criarAtivo).click();
+    })
+
+    it('Enviar um ativo sem responsavel pelo Enterprise', () => {
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.botaoEnvioAtivo).click();
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.botaoAtivoWhats).click();
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.canalEnvioWhats).select('string:waent_6');
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneWhats).type(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneTextowhats);
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.campoHsm).select('number:4');
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.criarAtivo).click();
+    })
+
+    it('Enviar um ativo com responsavel pelo Enterprise', () => {
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.botaoEnvioAtivo).click();
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.botaoAtivoWhats).click();
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.canalEnvioWhats).select('string:waent_6');
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.responsavel).click({ force: true });
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneWhats).type(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneTextowhats);
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.campoHsm).select('number:4');
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.criarAtivo).click();
+    })
 });
