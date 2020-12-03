@@ -18,7 +18,7 @@ describe('Envio de Ativo como operador - Pela home', () => {
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneWhats).type(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneTextoWhats);
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.campoMensagemWhats).type(elAtivoHome.ELEMENTS_ATIVO_HOME.textoMensagem);
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.criarAtivo).click();
-        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.spanMensagemSucesso).contains(elAtivoHome.ELEMENTS_ATIVO_HOME.mensagemSucesso);
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.spanMensagemSucesso).should('have.text', 'Mensagem enviada com sucesso!');
     })
 
     it('Enviar um ativo sem responsavel para Whatsapp Web com anexo', () => {
@@ -30,7 +30,7 @@ describe('Envio de Ativo como operador - Pela home', () => {
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.fileInputElement)
             .attachFile({ filePath: elAtivoHome.ELEMENTS_ATIVO_HOME.arquivos });
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.criarAtivo).click();
-        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.spanMensagemSucesso).contains(elAtivoHome.ELEMENTS_ATIVO_HOME.mensagemSucesso);
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.spanMensagemSucesso).should('have.text', 'Mensagem enviada com sucesso!');
     })
 
     it('Enviar um ativo com responsavel para Whatsapp Web', () => {
@@ -41,7 +41,7 @@ describe('Envio de Ativo como operador - Pela home', () => {
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneWhats).type(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneTextoWhats);
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.campoMensagemWhats).type(elAtivoHome.ELEMENTS_ATIVO_HOME.textoMensagem);
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.criarAtivo).click();
-        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.spanMensagemSucesso).contains(elAtivoHome.ELEMENTS_ATIVO_HOME.mensagemSucesso);
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.spanMensagemSucesso).should('have.text', 'Mensagem enviada com sucesso!');
     })
 
     it('Enviar um ativo com responsavel para Whatsapp Web com anexo', () => {
@@ -54,7 +54,7 @@ describe('Envio de Ativo como operador - Pela home', () => {
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.fileInputElement)
             .attachFile({ filePath: elAtivoHome.ELEMENTS_ATIVO_HOME.arquivos });
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.criarAtivo).click();
-        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.spanMensagemSucesso).contains(elAtivoHome.ELEMENTS_ATIVO_HOME.mensagemSucesso);
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.spanMensagemSucesso).should('have.text', 'Mensagem enviada com sucesso!');
     })
 
     it('Enviar um ativo sem responsavel pelo Enterprise', () => {
@@ -64,7 +64,7 @@ describe('Envio de Ativo como operador - Pela home', () => {
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneWhats).type(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneTextoWhats);
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.campoHsm).select('number:4');
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.criarAtivo).click();
-        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.spanMensagemSucesso).contains(elAtivoHome.ELEMENTS_ATIVO_HOME.mensagemSucesso);
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.spanMensagemSucesso).should('have.text', 'Mensagem enviada com sucesso!');
     })
 
     it('Enviar um ativo com responsavel pelo Enterprise', () => {
@@ -75,6 +75,7 @@ describe('Envio de Ativo como operador - Pela home', () => {
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneWhats).type(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneTextoWhats);
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.campoHsm).select('number:4');
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.criarAtivo).click();
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.spanMensagemSucesso).should('have.text', 'Mensagem enviada com sucesso!');
     })
 
     it('Enviar um ativo pelo E-mail', () => {
@@ -97,7 +98,7 @@ describe('Envio de Ativo como operador - Pela home', () => {
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneSms).type(elAtivoHome.ELEMENTS_ATIVO_HOME.telefoneTextoSms);
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.campoMensagemSms).type(elAtivoHome.ELEMENTS_ATIVO_HOME.textoMensagem);
         cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.criarAtivoSms).click();
-        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.spanMensagemSucesso).contains(elAtivoHome.ELEMENTS_ATIVO_HOME.mensagemSucesso);
+        cy.get(elAtivoHome.ELEMENTS_ATIVO_HOME.spanMensagemSucesso).should('have.text', 'Mensagem enviada com sucesso!');
     })
 
 });
