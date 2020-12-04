@@ -1,6 +1,8 @@
 ///// <reference types= "cypress" />
 
+import Login from '../../support/pages/login.js'
 const elRelatorio = require ('../../support/elements/relatorios.js')
+const elBaseUrl = require ('../../support/elements/urls_acessos.js')
 
 
 describe('Envio de Ativo pelo sistema como operador - Pela tela inicial', () => {
@@ -12,7 +14,7 @@ describe('Envio de Ativo pelo sistema como operador - Pela tela inicial', () => 
 
     it('Extrair o relatorio analitico do MktZap', () => {
 
-        cy.url('https://qa-poli.infranw.com.br/reports/analytic');
+        cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioAnalitico);
         cy.get('"data-test="menu-a-report"').click();
         cy.get("data-test=menu-a-report_bi_complete").click();
         cy.get("data-test=menu-a-report_analytic").click();
@@ -21,21 +23,17 @@ describe('Envio de Ativo pelo sistema como operador - Pela tela inicial', () => 
 
     it('Extrair o relatorio efetividade do MktZap', () => {
         
-        cy.url('')
+        cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioEfetividade);
         cy.get('data-test="menu-a-report_effectiviness"').click();
         cy.get('ng-click="vm.downloadCsv()"').click();
-        cy.get('data-test="menu-a-report_productivity"').click();
     })
 
-    it('Extrair o relatorio efetividade do MktZap', () => {
+    it('Extrair o relatorio enquete do MktZap', () => {
 
-        cy.get('ng-model="vm.filters.type"').select('aqui precisa inserir a insp do campo de selecao')
-        //clica no tipo para selecionar a opcao
-        cy.get('')
-        //extracao do relatorio de enquetes
-        cy.get('data-test="menu-a-report_polls"')
-        //clica no btn de abrir o relatorio de enquetes
-        cy.get('ng-model="vm.poll"').select()
+        cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioEnquete);
+        cy.get('ng-model="vm.filters.type"').select('18');
+        cy.get('data-test="menu-a-report_polls"');
+        cy.get('ng-model="vm.poll"').select();
     
 
     })
