@@ -1,11 +1,7 @@
 ///// <reference types= "cypress" />
 
-<<<<<<< HEAD
-import Login from '../../support/pages/login.js'
-=======
 const elRelatorio = require ('../../support/elements/relatorios.js')
 
->>>>>>> 06c60242051d05b52db3b57e9d2817a48b181772
 
 describe('Envio de Ativo pelo sistema como operador - Pela tela inicial', () => {
 
