@@ -1,26 +1,23 @@
 /// <reference types="cypress" />
 
 import Login from '../../support/pages/login.js';
-import { baseUrl, emailGestor, senhaGestor, baseUrlLogado, baseUrlLogout, emailOperador, senhaOperador } from '../../support/elements/login_po.js';
-import { iconePerfil, logout } from '../../support/elements/menu_profile_po.js';
+const elBase = require('../../support/elements/urls_acessos.js');
+const elLogin = require('../../support/elements/login.js')
 
 describe('Acesso ao Mktzap', () => {
 
-    it ('Login e Logout como Gestor', () => {
-        //cy.loginGestor();
-        Login.loginGestor(emailGestor, senhaGestor);
-        cy.url().should('eq',baseUrlLogado);
-        cy.get(iconePerfil).click();
-        cy.get(logout).click();
-        cy.url().should('eq', baseUrlLogout);       
+    it('Login e Logout como Gestor', () => {
+        Login.loginGestor();
+        cy.get(elLogin.ELEMENTS_LOGIN.iconePerfil).click();
+        cy.get(elLogin.ELEMENTS_LOGIN.bntLogout).click();
+        cy.url().should('eq', elBase.ELEMENTS_BASE_URL.baseUrlLogout);       
     })
 
-    it ('Login e Logout como Operador', () => {
-        cy.loginOperador(emailOperador, senhaOperador);
-        cy.url().should('eq',baseUrlLogado);
-        cy.get(iconePerfil).click();
-        cy.get(logout).click();
-        cy.url().should('eq', baseUrlLogout);       
+    it('Login e Logout como Operador', () => {
+        Login.loginOperador(); 
+        cy.get(elLogin.ELEMENTS_LOGIN.iconePerfil).click();
+        cy.get(elLogin.ELEMENTS_LOGIN.bntLogout).click();
+        cy.url().should('eq', elBase.ELEMENTS_BASE_URL.baseUrlLogout);       
     })
 
 });
