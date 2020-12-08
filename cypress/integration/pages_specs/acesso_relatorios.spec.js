@@ -1,43 +1,68 @@
-///// <reference types= "cypress" />
+///// <reference types="cypress" />
 
-import Login from '../../support/pages/login.js'
-const elRelatorio = require ('../../support/elements/relatorios.js')
-const elBaseUrl = require ('../../support/elements/urls_acessos.js')
+import Login from '../../support/pages/login.js';
+const elBaseUrl = require ('../../support/elements/urls_acessos.js');
+const elRelatorios = require ('../../support/elements/relatorios.js');
 
 
-describe('Envio de Ativo pelo sistema como operador - Pela tela inicial', () => {
+describe('Acesso a relatorios', () => {
 
-   beforeEach(() => {
-
-    Login.loginGestor();
-   })
-
-    it('Extrair o relatorio analitico do MktZap', () => {
-
-        cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioAnalitico);
-        cy.get('"data-test="menu-a-report"').click();
-        cy.get("data-test=menu-a-report_bi_complete").click();
-        cy.get("data-test=menu-a-report_analytic").click();
-        cy.get("vm.utils.checkPeriodReports(90, 'analytic', vm ,vm.download)").click();
+    before(() => {
+        Login.loginGestor();
     })
 
-    it('Extrair o relatorio efetividade do MktZap', () => {
-        
-        cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioEfetividade);
-        cy.get('data-test="menu-a-report_effectiviness"').click();
-        cy.get('ng-click="vm.downloadCsv()"').click();
+    it('Acesso ao relatorio novo', () => {
+        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioCompleto);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoCanalRelatorioCompleto).click();
     })
 
-    it('Extrair o relatorio enquete do MktZap', () => {
-
-        cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioEnquete);
-        cy.get('ng-model="vm.filters.type"').select('18');
-        cy.get('data-test="menu-a-report_polls"');
-        cy.get('ng-model="vm.poll"').select();
-    
-
+    it('Acesso ao relatorio analitico', () => {
+        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioAnalitico);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioAnalitico);
     })
 
+    it('Acesso ao relatorio de efetividade', () => {
+        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioEfetividade);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoVisualizarRelatorioEfetividade);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoBaixarRelatorioProdutividade);
+    })
 
+    it('Acesso ao relatorio de produtividade', () => {
+        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioProdutividade);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxdeTipoRelatorioProd).select('value="VO"');
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoExtrairRelatorioProdutividade);
+    })
 
-})
+    it('Acesso ao relatorio de gatilhos', () => {
+        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioGatilho);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxCanalRelatorioGatilho).select('WhatsApp');
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoFiltrarRelatorioGatilho);
+    })
+
+    it('Acesso ao relatorio de enquetes', () => {
+        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioEnquete);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxSelecionarEnquete).select('TesteEnquete');
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoVisualizarRelatorioEnquetes);
+    })
+
+    it('Acesso ao relatorio de controle de pausa', () => {
+        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioPausa);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioPausa);
+    })
+
+    it('Acesso ao relatorio de controle de sessão', () => {
+        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioSessao);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioSessao);
+    })
+
+    it('Acesso ao relatorio de controle de ativos', () => {
+        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioAtivo);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxCanalRelatorioAtivo).select('Whats QA');
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoRelatorioCompletoRelatorioAtivo);
+    })
+
+    it('Acesso ao relatorio de controle de ativos', () => {
+        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioOptin);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioOptin);
+    })
+}) 
