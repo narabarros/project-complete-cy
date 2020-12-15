@@ -6,5 +6,5 @@ export const ELEMENTS_BASE_URL = {
     baseUrlLogout: 'https://qa-poli.infranw.com.br/login',
     baseUrlMaling: 'https://qa-poli.infranw.com.br/mailing-list',
     baseUrlCampanha: 'https://qa-poli.infranw.com.br/campaign-list',
-    baseUrlRelatorioProdutividade: ''
+    baseUrlRelatorioProdutividade: '',
 }
