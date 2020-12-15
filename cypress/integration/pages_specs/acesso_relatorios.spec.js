@@ -11,49 +11,43 @@ describe('Acesso a relatorios', () => {
         Login.loginGestor();
     })
 
-    it('Acesso ao relatorio novo', () => {
-        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioCompleto);
-        cy.wait(12000);
-        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoCanalRelatorioCompleto).click();
+    //it('Acesso ao relatorio novo', () => {
+        //cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioCompleto);
+        //cy.wait(500000);
+        //cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoCanalRelatorioCompleto).click();
     })
 
-    it('Acesso ao relatorio analitico', () => {
+    it.only('Acesso ao relatorio analitico', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioAnalitico);
-        cy.wait(12000);
-        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioAnalitico);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioAnalitico).click();
     })
 
     it('Acesso ao relatorio de efetividade', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioEfetividade);
-        cy.wait(12000);
-        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoVisualizarRelatorioEfetividade);
-        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoBaixarRelatorioProdutividade);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoVisualizarEfetividade).click();
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoBaixarRelatorioEfetividade).click();
     })
 
     it('Acesso ao relatorio de produtividade', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioProdutividade);
-        cy.wait(12000);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxdeTipoRelatorioProd).select('value="VO"');
-        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoExtrairRelatorioProdutividade);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoExtrairRelatorioProdutividade).click();
     })
 
     it('Acesso ao relatorio de gatilhos', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioGatilho);
-        cy.wait(12000);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxCanalRelatorioGatilho).select('WhatsApp');
-        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoFiltrarRelatorioGatilho);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoFiltrarRelatorioGatilho).click();
     })
 
     it('Acesso ao relatorio de enquetes', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioEnquete);
-        cy.wait(12000);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxSelecionarEnquete).select('TesteEnquete');
-        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoVisualizarRelatorioEnquetes);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoVisualizarRelatorioEnquetes).click();
     })
 
     it('Acesso ao relatorio de controle de pausa', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioPausa);
-        cy.wait(12000);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioPausa);
     })
 
@@ -65,14 +59,11 @@ describe('Acesso a relatorios', () => {
 
     it('Acesso ao relatorio de controle de ativos', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioAtivo);
-        cy.wait(12000);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxCanalRelatorioAtivo).select('Whats QA');
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoRelatorioCompletoRelatorioAtivo);
     })
 
-    it('Acesso ao relatorio de controle de ativos', () => {
+    it('Acesso ao relatorio de controle de optin', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioOptin);
-        cy.wait(12000);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioOptin);
     })
-}) 
