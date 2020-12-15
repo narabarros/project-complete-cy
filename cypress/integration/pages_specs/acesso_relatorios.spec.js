@@ -22,14 +22,14 @@ describe('Acesso a relatorios', () => {
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoBaixarRelatorioEfetividade).click();
     })
 
-    it.only('Acesso ao relatorio de produtividade', () => {
+    it('Acesso ao relatorio de produtividade', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioProdutividade);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxdeTipoRelatorioProd).select('VO');
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoExtrairRelatorioProdutividade).click();
     })
 
     it('Acesso ao relatorio de gatilhos', () => {
-        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioGatilho);
+        cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioGatilho);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxCanalRelatorioGatilho).select('waweb-30');
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoFiltrarRelatorioGatilho).click();
     })
@@ -42,24 +42,25 @@ describe('Acesso a relatorios', () => {
 
     it('Acesso ao relatorio de controle de pausa', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioPausa);
-        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioPausa);
+        cy.get(elRelatorios.ELEMENTS_RELATORIOS.cxSelecionarUsuario).select('93')
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioPausa).click();
     })
 
     it('Acesso ao relatorio de controle de sessão', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioSessao);
-        cy.wait(12000);
-        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioSessao);
+        cy.get(elRelatorios.ELEMENTS_RELATORIOS.cxSelecionarUsuario).select('93')
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioSessao).click();
     })
 
     it('Acesso ao relatorio de controle de ativos', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioAtivo);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxCanalRelatorioAtivo).select('number:30');
-        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoRelatorioCompletoRelatorioAtivo);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoRelatorioCompletoRelatorioAtivo).click();
     })
 
     it('Acesso ao relatorio de controle de optin', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioOptin);
-        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioOptin);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioOptin).click();
     })
 
 })
