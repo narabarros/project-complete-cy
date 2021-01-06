@@ -7,7 +7,7 @@ const elRelatorios = require ('../../support/elements/relatorios.js');
 
 describe('Acesso a relatorios', () => {
 
-    before(() => {
+    beforeEach(() => {
         Login.loginGestor();
     })
 
@@ -32,12 +32,15 @@ describe('Acesso a relatorios', () => {
         cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioGatilho);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxCanalRelatorioGatilho).select('waweb-30');
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoFiltrarRelatorioGatilho).click();
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoExportarRelatorioGatilho).click();
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoBaixarRelatorioGatilho).click();
     })
 
     it('Acesso ao relatorio de enquetes', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioEnquete);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxSelecionarEnquete).select('18');
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoVisualizarRelatorioEnquetes).click();
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoBaixarRelatorioEnquete).click();     
     })
 
     it('Acesso ao relatorio de controle de pausa', () => {
@@ -58,9 +61,8 @@ describe('Acesso a relatorios', () => {
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoRelatorioCompletoRelatorioAtivo).click();
     })
 
-    it('Acesso ao relatorio de controle de optin', () => {
+    it.only('Acesso ao relatorio de controle de optin', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioOptin);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioOptin).click();
     })
-
 })
