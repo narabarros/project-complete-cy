@@ -1,45 +1,68 @@
 /// <reference types="cypress" />
-import { baseUrl } from '../../support/elements/urls_acessos.js';
+
+import Login from '../../support/pages/login.js';
+const elBaseUrl = require ('../../support/elements/urls_acessos.js');
+const elRelatorios = require ('../../support/elements/relatorios.js');
 
 
-describe('Envio de Ativo pelo sistema como operador - Pela tela inicial', () => {
+describe('Acesso a relatorios', () => {
 
-   beforeEach(() => {
+    beforeEach(() => {
+        Login.loginGestor();
+    })
 
-    cy.visit(baseUrl);
-    cy.loginOperador();
-   })
-    it('Extrair os relatorios do MktZap', () => {
+    it('Acesso ao relatorio analitico', () => {
+        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioAnalitico);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioAnalitico).click();
+    })
 
-        cy.get('"data-test="menu-a-report"').click();
-        //clica no btn "relatorios"
-        
-        //-->extracao do relatorio analitico
-        cy.get("data-test=menu-a-report_bi_complete").click();
-        //clica no btn "relatorio completo novo"
-        //alinhar o que seria inserido aqui
-        cy.get("data-test=menu-a-report_analytic").click();
-        //clica no bnt "relatorio analitico"
-        cy.get("vm.utils.checkPeriodReports(90, 'analytic', vm ,vm.download)").click();
-        //faz o download do relatorio analitico
-        
-        //--> extracao do relatorio de efetividade
-        cy.get('data-test="menu-a-report_effectiviness"').click();
-        //clique no menu - efetividade (aqui ja mostra o periodo atual exibido em tela)
-        cy.get('ng-click="vm.downloadCsv()"').click();
-        //clica no btn de baixar o csv
-        cy.get('data-test="menu-a-report_productivity"').click();
-        
-        //-->extracao do relatorio de produtividade
-        cy.get('ng-model="vm.filters.type"').select(aqui precisa inserir a insp do campo de selecao)
-        //clica no tipo para selecionar a opcao
-        cy.get('')
+    it('Acesso ao relatorio de efetividade', () => {
+        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioEfetividade);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoVisualizarEfetividade).click();
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoBaixarRelatorioEfetividade).click();
+    })
 
-        //extracao do relatorio de enquetes
-        cy.get('data-test="menu-a-report_polls"')
-        //clica no btn de abrir o relatorio de enquetes
-        cy.get('ng-model="vm.poll"').select()
+    it('Acesso ao relatorio de produtividade', () => {
+        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioProdutividade);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxdeTipoRelatorioProd).select('VO');
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoExtrairRelatorioProdutividade).click();
+    })
 
+    it('Acesso ao relatorio de gatilhos', () => {
+        cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioGatilho);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxCanalRelatorioGatilho).select('waweb-30');
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoFiltrarRelatorioGatilho).click();
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoExportarRelatorioGatilho).click();
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoBaixarRelatorioGatilho).click();
+    })
 
+    it('Acesso ao relatorio de enquetes', () => {
+        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioEnquete);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxSelecionarEnquete).select('18');
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoVisualizarRelatorioEnquetes).click();
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoBaixarRelatorioEnquete).click();     
+    })
 
+    it('Acesso ao relatorio de controle de pausa', () => {
+        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioPausa);
+        cy.get(elRelatorios.ELEMENTS_RELATORIOS.cxSelecionarUsuario).select('93')
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioPausa).click();
+    })
 
+    it('Acesso ao relatorio de controle de sessão', () => {
+        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioSessao);
+        cy.get(elRelatorios.ELEMENTS_RELATORIOS.cxSelecionarUsuario).select('93')
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioSessao).click();
+    })
+
+    it('Acesso ao relatorio de controle de ativos', () => {
+        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioAtivo);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxCanalRelatorioAtivo).select('number:30');
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoRelatorioCompletoRelatorioAtivo).click();
+    })
+
+    it('Acesso ao relatorio de controle de optin', () => {
+        cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioOptin);
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioOptin).click();
+    })
+})
