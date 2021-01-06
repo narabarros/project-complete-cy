@@ -61,7 +61,7 @@ describe('Acesso a relatorios', () => {
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoRelatorioCompletoRelatorioAtivo).click();
     })
 
-    it.only('Acesso ao relatorio de controle de optin', () => {
+    it('Acesso ao relatorio de controle de optin', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioOptin);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioOptin).click();
     })
