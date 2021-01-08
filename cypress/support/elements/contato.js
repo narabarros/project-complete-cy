@@ -4,5 +4,6 @@ export const  ELEMENTS_CONTATO = {
     campoBusca: '#contactlist_fldSearchTerm',
     botaoBuscar: '#contactlist_btnSearchContact',
     botaoAcoes: '[ga-event="mktzap_bt_dropdown_contact"]',
-    botaoEnviar: '[ga-event="mktzap_bt_active_contact"]'
+    botaoEnviar: '[ga-event="mktzap_bt_active_contact"]',
+    contatoBusca: '14997142480'
 }
