@@ -3,7 +3,7 @@
 require("cypress-file-upload");
 import Login from '../../support/pages/login.js'
 import Logout from '../../support/pages/logout.js';
-import finalizaCardAtendimento from '../../support/pages/finalizaCardAtendimento.js';
+import cardAtendimento from '../../support/pages/cardAtendimento.js';
 const elAtivo = require('../../support/elements/ativo.js')
 
 
@@ -86,7 +86,7 @@ describe('Envio de Ativo como operador - Pela home - Whatsapp Web e Enterprise',
     afterEach(() => {
         Logout.logout();
         Login.loginGestor();
-        finalizaCardAtendimento.finalizacaoCardStatus();
+        cardAtendimento.finalizacaoCardStatus();
     })
 
 });

@@ -3,7 +3,7 @@
 require("cypress-file-upload");
 import Login from '../../support/pages/login.js';
 import Logout from '../../support/pages/logout.js';
-import finalizaCardAtendimento from '../../support/pages/finalizaCardAtendimento.js';
+import cardAtendimento from '../../support/pages/cardAtendimento.js';
 const elContato = require('../../support/elements/contato.js');
 const elAtivo = require('../../support/elements/ativo.js');
 
@@ -102,7 +102,7 @@ describe('Tela de contato', () => {
     afterEach(() => {
         Logout.logout();
         Login.loginGestor();
-        finalizaCardAtendimento.finalizacaoCardStatus();
+        cardAtendimento.finalizacaoCardStatus();
     })
 
 })

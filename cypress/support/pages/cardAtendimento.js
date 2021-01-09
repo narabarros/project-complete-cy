@@ -2,7 +2,7 @@
 const elAtivo = require('../elements/ativo.js');
 const elCardAtendimento = require('../elements/cardAtendimento.js')
 
-class finalizaCardAtendimento {
+class cardAtendimento {
     finalizacaoCardStatus() {
         cy.get(elCardAtendimento.ELEMENTS_CARD_ATENDIMENTO.setorCard).click();
         cy.wait(1000);
@@ -19,4 +19,4 @@ class finalizaCardAtendimento {
 
 }
 
-export default new finalizaCardAtendimento();
+export default new cardAtendimento();
