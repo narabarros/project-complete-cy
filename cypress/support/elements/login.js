@@ -7,8 +7,7 @@ export const ELEMENTS_LOGIN = {
     senhaGestor: '123mudar',
     emailOperador: 'operadorsandra@operador.com',
     senhaOperador: '123mudar',
-    iconePerfil: '.account-pic',
-    bntLogout: '[data-test="menu-user-bottom-a-logout"]',
+    
     //Acesso Lord
     userNameLord: '[data-test="wolologin-input-user_name"]',
     userPasswordLord: '[data-test="wolologin-input-password"]',
