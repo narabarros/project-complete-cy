@@ -7,7 +7,7 @@ const elRelatorios = require ('../../support/elements/relatorios.js');
 
 describe('Acesso a relatorios', () => {
 
-    beforeEach(() => {
+    before(() => {
         Login.loginGestor();
     })
 
