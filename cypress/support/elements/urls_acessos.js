@@ -18,4 +18,5 @@ export const ELEMENTS_BASE_URL = {
     baseUrlRelatorioOptin: 'https://qa-poli.infranw.com.br/reports/optin',
     baseUrlNewEnquete: 'https://qa-poli.infranw.com.br/polls',
     baseUrlNewStatus: 'https://qa-poli.infranw.com.br/status',
+    baseUrlHistorico: 'https://qa-poli.infranw.com.br/history',
 }
