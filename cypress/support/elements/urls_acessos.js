@@ -21,4 +21,5 @@ export const ELEMENTS_BASE_URL = {
     baseUrlHistorico: 'https://qa-poli.infranw.com.br/history',
     baseUrlAlertaInterno: 'https://qa-poli.infranw.com.br/internal-messenger',
     baseUrlPerguntaseRespostas: 'https://qa-poli.infranw.com.br/knowledge-base',
+    baseUrlConfiguracoes: 'https://qa-poli.infranw.com.br/company#',
 }
