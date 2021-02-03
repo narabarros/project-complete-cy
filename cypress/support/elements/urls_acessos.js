@@ -22,5 +22,11 @@ export const ELEMENTS_BASE_URL = {
     baseUrlAlertaInterno: 'https://qa-poli.infranw.com.br/internal-messenger',
     baseUrlPerguntaseRespostas: 'https://qa-poli.infranw.com.br/knowledge-base',
     baseUrlConfiguracoes: 'https://qa-poli.infranw.com.br/company#',
-    
+    baseUrlDashMonitoria: 'https://qa-poli.infranw.com.br/dashboard/distribution-monitoring',
+    baseUrlGestaoNegocio: 'https://qa-poli.infranw.com.br/dashboard/dashboard-business-management',
+    baseUrlDashGestaoEquipe: 'https://qa-poli.infranw.com.br/dashboard/dashboard-team-management',
+    baseUrlResumoOperacional: 'https://qa-poli.infranw.com.br/dashboard/dashboard-operational-summary',
+    baseUrlComunicacaoInterna: 'https://qa-poli.infranw.com.br/dashboard/dashboard-internal-communication',
+    baseUrlHoraaHora: 'https://qa-poli.infranw.com.br/reports/every-hour',
+
 }
