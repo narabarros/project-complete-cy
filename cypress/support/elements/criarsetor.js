@@ -5,5 +5,4 @@ export const ELEMENTS_CRIARSETOR = {
     btnSalvarSetor: '[data-test="company-tab-sector-button-new"]',
     
 
-
 }
