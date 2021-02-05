@@ -28,5 +28,6 @@ export const ELEMENTS_BASE_URL = {
     baseUrlResumoOperacional: 'https://qa-poli.infranw.com.br/dashboard/dashboard-operational-summary',
     baseUrlComunicacaoInterna: 'https://qa-poli.infranw.com.br/dashboard/dashboard-internal-communication',
     baseUrlHoraaHora: 'https://qa-poli.infranw.com.br/reports/every-hour',
+    baseUrlNewchat: 'https://qa-poli.infranw.com.br/newchat#',
 
 }
