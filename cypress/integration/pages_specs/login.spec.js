@@ -17,4 +17,10 @@ describe('Acesso ao Mktzap', () => {
         Logout.logout();       
     })
 
+    it('Login e Logout como Lord', () => {
+        Login.loginLord();
+        Logout.logout();
+
+    })
+
 });
