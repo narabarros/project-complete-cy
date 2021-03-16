@@ -65,4 +65,5 @@ describe('Acesso a relatorios', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioOptin);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoGerarRelatorioOptin).click();
     })
+
 })

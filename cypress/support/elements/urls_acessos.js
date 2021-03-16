@@ -29,5 +29,10 @@ export const ELEMENTS_BASE_URL = {
     baseUrlComunicacaoInterna: 'https://qa-poli.infranw.com.br/dashboard/dashboard-internal-communication',
     baseUrlHoraaHora: 'https://qa-poli.infranw.com.br/reports/every-hour',
     baseUrlNewchat: 'https://qa-poli.infranw.com.br/newchat#',
+    baseUrlPainel: 'https://qa-poli.infranw.com.br/chat',
+    baseUrlAtendimento: 'https://qa-poli.infranw.com.br/chat#menu-attendance',
+    baseUrlDistribuicao: 'https://qa-poli.infranw.com.br/rules/attendances/automatic-distribution',
+    baseUrlRelatorioBackground: 'https://qa-poli.infranw.com.br/general-settings/settings',
+    baseUrlConfigsGerais: 'https://qa-poli.infranw.com.br/general-settings/settings#config',
 
 }
