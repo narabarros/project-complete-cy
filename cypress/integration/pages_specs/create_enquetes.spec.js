@@ -8,7 +8,7 @@ describe('Criacao de enquete', () => {
 
     beforeEach(() => {
         Login.loginGestor();
-})
+    })
 
     it.only('Criacao de enquete', () => {
         cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlNewEnquete);
@@ -18,9 +18,9 @@ describe('Criacao de enquete', () => {
         cy.get(elEnquete.ELEMENTS_ENQUETE.cxInvalida).type('Resposta invalida');
         cy.get(elEnquete.ELEMENTS_ENQUETE.cxMsg).type('Obrigada!');
         cy.get(elEnquete.ELEMENTS_ENQUETE.cxDesc).type('Bom');
-        cy.get(elEnquete.ELEMENTS_ENQUETE.cxDesc2).type('Ruim');
+        cy.get(elEnquete.ELEMENTS_ENQUETE.cxDesc2).type('Ruim', {force: true});
         cy.get(elEnquete.ELEMENTS_ENQUETE.btnSalvar).click();
-})
+    })
 
     it('Criacao do status de finalizacao', () => {
         cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlNewStatus);
@@ -30,11 +30,5 @@ describe('Criacao de enquete', () => {
         cy.get(elEnquete.ELEMENTS_ENQUETE.selectNoCamposObrigatorios).click({force: true}).should('be.checked');
         cy.get(elEnquete.ELEMENTS_ENQUETE.selectEnquete).select('TesteNow2');
         cy.get(elEnquete.ELEMENTS_ENQUETE.BtnCriarStatus).click();
+    })
 })
-
-})
-
-
-
-
-

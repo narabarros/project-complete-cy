@@ -4,7 +4,7 @@ export const ELEMENTS_ATIVO = {
     botaoAtivoEmail: '[ga-event="mktzap_bt_action_att_active_email"]',
     canalEnvioWhats: '#activeChannel',
     telefoneWhats: '[ng-model="activeVm.activeWhatsapp.phone_number"]',
-    telefoneTextoWhats: '14997142480',
+    telefoneTextoWhats: '14991895459',
     campoMensagemWhats: '#activeMessage',
     textoMensagem: 'Testes cypress envio ativo operador',
     criarAtivo: '[ga-event="mktzap_bt_action_attendance_modal_newwpp_modal_create"]',
@@ -28,12 +28,12 @@ export const ELEMENTS_ATIVO = {
     botaoAtivoSms: '[data-test="attendances-button-send_sms_active"]',
     canalEnvioSms: '[ng-model="vm.activeSMS.channel_id"]',
     telefoneSms: '[ng-model="vm.activeSMS.phone_number"]',
-    telefoneTextoSms: '14997142480',
+    telefoneTextoSms: '14991895459',
     campoMensagemSms: '#message',
     criarAtivoSms: '[ga-event="mktzap_bt_action_attendance_modal_newsms_modal_create"]',
     canalWhats: 'string:waweb_30',
     canalEnterprise: 'string:waent_6',
     hsmEnterprise: 'number:4',
-    canalSms: 'number:8',
-    canalEmail: '7'
+    canalSms: 'number:19',
+    canalEmail: '10'
 }

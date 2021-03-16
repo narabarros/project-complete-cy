@@ -1,5 +1,4 @@
 export const ELEMENTS_ENQUETE = {
-
     btnCriarEnquete: '[ng-click="vmPollsCtrl.changeTab(vmPollsCtrl.TAB_CRUD);vmPollsCtrl.clearPoll();"]',
     cxtxtNome: '[ng-model="vmPollsCtrl.selectedPoll.name"]',
     cxPergunta: '[ng-model="vmPollsCtrl.selectedPoll.question"]',
@@ -15,7 +14,4 @@ export const ELEMENTS_ENQUETE = {
     selectNoCamposObrigatorios: '[data-test="status-modal-create-radio-no"]',
     selectEnquete: '[data-test="status-modal-create-select-poll"]',
     BtnCriarStatus: '[data-test="status-modal-create-button-criar"]',
-   
-
-
 }    

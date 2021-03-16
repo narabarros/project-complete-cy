@@ -7,12 +7,11 @@ const elCampanha = require('../../support/elements/campanha.js');
 const elBase = require('../../support/elements/urls_acessos.js');
 
 describe('Envio de Campanha pelo sistema', () => {
-   before(
-      () => {
-         Login.loginGestor();
-         Mailing.incluirMaling();
-      }
-   )
+   
+   beforeEach(() => {
+      Login.loginGestor();
+      Mailing.incluirMaling();
+   })
 
    it('Enviar uma campanha pelo Whatsapp Web via Mailing', () => {
       cy.visit(elBase.ELEMENTS_BASE_URL.baseUrlCampanha);

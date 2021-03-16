@@ -1,5 +1,4 @@
 export const ELEMENTS_RELATORIOS = {
-
     botaoCanalRelatorioCompleto: 'themableBackgroundColor',
     botaoGerarRelatorioAnalitico: '[ga-event="mktzap_bt_action_analytic_report_generate"]',
     botaoVisualizarEfetividade: '[ga-event="mktzap_bt_action_effectiviness_view"]',
@@ -19,8 +18,4 @@ export const ELEMENTS_RELATORIOS = {
     cxCanalRelatorioAtivo: '[ng-model="vm.filters.channel_id"]',
     botaoRelatorioCompletoRelatorioAtivo: '[ga-event="mktzap_bt_action_active_report_download"]',
     botaoGerarRelatorioOptin: '[ga-event="mktzap_bt_action_optin_report_generate"]',
-
-
-
-
 }
