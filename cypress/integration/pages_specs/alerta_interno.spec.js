@@ -6,10 +6,9 @@ const elAlertaInterno = require ('../../support/elements/alertainterno.js');
 
 describe('Envio de alerta interno', () => {
 
-})
     beforeEach(() => {
         Login.loginGestor();
-})
+    })
 
     it('Criacao e envio de alerta interno', () => {
 
@@ -18,4 +17,5 @@ describe('Envio de alerta interno', () => {
         cy.get(elAlertaInterno.ELEMENTS_ALERTAINTERNO.cxTexto).type('Teste');
         cy.get(elAlertaInterno.ELEMENTS_ALERTAINTERNO.btnEnviar).click();
 
+    })
 })

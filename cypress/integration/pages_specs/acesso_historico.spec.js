@@ -6,16 +6,14 @@ const elHistorico = require ('../../support/elements/historico.js');
 
 describe('Acesso ao historico', () => {
 
-})
     beforeEach(() => {
         Login.loginGestor();
-})
+    })
 
     it('Pesquisa no historico', () => {
 
         cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlHistorico);
-        cy.get(elHistorico.ELEMENTS_HISTORICO.cxCampoTelefone).type('(14) 99704-5503');
-        cy.get(elHistorico.ELEMENTS_HISTORICO.btnFiltrarHistorico).click();
-
-
+        cy.get(elHistorico.ELEMENTS_HISTORICO.cxCampoTelefone).type('(14) 99704-5503', {force: true});
+        cy.get(elHistorico.ELEMENTS_HISTORICO.btnFiltrarHistorico).click({force: true});
+    })
 })

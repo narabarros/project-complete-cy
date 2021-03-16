@@ -6,10 +6,9 @@ const elDashboards = require ('../../support/elements/dashboards.js');
 
 describe('Acesso as dashboards', () => {
 
-})
     beforeEach(() => {
         Login.loginGestor();
-})
+    })
 
     it('Acesso a dashboard monitoria de distribuicao', () => {
         cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlDashMonitoria);
@@ -40,3 +39,5 @@ describe('Acesso as dashboards', () => {
         cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlHoraaHora);
         cy.wait(4000)
     })
+    
+})

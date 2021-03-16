@@ -9,8 +9,7 @@ describe('Criar Operador', () => {
 
     before(() => {
         Login.loginGestor();
-})
-
+    })
 
     it('Criar operador', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlConfiguracoes);
@@ -23,7 +22,6 @@ describe('Criar Operador', () => {
         cy.get (elcriaroperador.ELEMENTS_CRIAROPERADOR.btnFeminino).click();
         cy.get (elcriaroperador.ELEMENTS_CRIAROPERADOR.btnFuncao).select('1');
         cy.get (elcriaroperador.ELEMENTS_CRIAROPERADOR.btnSalvar).click();
-        cy.get (elcriaroperador.ELEMENTS_CRIAROPERADOR.btnConfirmar).click({ multiple: true });
-
-})
+        cy.get (elcriaroperador.ELEMENTS_CRIAROPERADOR.btnConfirmar).click({ multiple: true, force: true });
+    })
 })

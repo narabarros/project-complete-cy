@@ -1,6 +1,4 @@
 export const ELEMENTS_NEWCHAT = {
-
-
     btncriarNewchat: '[ga-event="mktzap_bt_action_tardis_channel_create"]',
     cxNomeCanal: '[ga-event="modal_chatter_name"]',
     cxTitulo: '[ga-event="modal_chatter_title"]',
@@ -12,5 +10,4 @@ export const ELEMENTS_NEWCHAT = {
     cxPosicao: '[ga-event="modal_chatter_select_position"]',
     btnProx2: '[ng-click="vmChannels.nextStep()"]',
     btnProx3: '[ga-event="modal_chatter_btn_create_chatter"]',
-
 }

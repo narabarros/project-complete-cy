@@ -1,6 +1,6 @@
 export const ELEMENTS_LOGIN = {
     //Acesso Operador e Gestor
-    userName:'#login_fldLoginUserName',
+    userName:'[data-test="login-input-user_name"]',
     userPassword: '[data-test="login-input-password"]',
     btnLogin: '[data-test="login-button-login"]',
     emailGestor: 'gestorsandra@gestor.com',

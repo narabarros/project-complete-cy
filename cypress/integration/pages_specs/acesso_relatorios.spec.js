@@ -7,7 +7,7 @@ const elRelatorios = require ('../../support/elements/relatorios.js');
 
 describe('Acesso a relatorios', () => {
 
-    before(() => {
+    beforeEach(() => {
         Login.loginGestor();
     })
 
@@ -19,7 +19,7 @@ describe('Acesso a relatorios', () => {
     it('Acesso ao relatorio de efetividade', () => {
         cy.visit (elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioEfetividade);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoVisualizarEfetividade).click();
-        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoBaixarRelatorioEfetividade).click();
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoBaixarRelatorioEfetividade).click({force: true});
     })
 
     it('Acesso ao relatorio de produtividade', () => {
@@ -32,8 +32,8 @@ describe('Acesso a relatorios', () => {
         cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioGatilho);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxCanalRelatorioGatilho).select('waweb-30');
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoFiltrarRelatorioGatilho).click();
-        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoExportarRelatorioGatilho).click();
-        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoBaixarRelatorioGatilho).click();
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoExportarRelatorioGatilho).click({force: true});
+        cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoBaixarRelatorioGatilho).click({force: true});
     })
 
     it('Acesso ao relatorio de enquetes', () => {
