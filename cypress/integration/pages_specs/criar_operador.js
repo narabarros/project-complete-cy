@@ -4,7 +4,6 @@ import Login from '../../support/pages/login.js';
 const elBaseUrl = require ('../../support/elements/urls_acessos.js');
 const elcriaroperador = require ('../../support/elements/criaroperador.js');
 
-
 describe('Criar Operador', () => {
 
     before(() => {
@@ -22,6 +21,8 @@ describe('Criar Operador', () => {
         cy.get (elcriaroperador.ELEMENTS_CRIAROPERADOR.btnFeminino).click();
         cy.get (elcriaroperador.ELEMENTS_CRIAROPERADOR.btnFuncao).select('1');
         cy.get (elcriaroperador.ELEMENTS_CRIAROPERADOR.btnSalvar).click();
+        cy.wait(1000);
         cy.get (elcriaroperador.ELEMENTS_CRIAROPERADOR.btnConfirmar).click({ multiple: true, force: true });
     })
-})
+
+});

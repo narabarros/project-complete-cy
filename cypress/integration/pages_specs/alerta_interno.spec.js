@@ -11,11 +11,10 @@ describe('Envio de alerta interno', () => {
     })
 
     it('Criacao e envio de alerta interno', () => {
-
         cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlAlertaInterno);
         cy.get(elAlertaInterno.ELEMENTS_ALERTAINTERNO.radioInicial).click();
         cy.get(elAlertaInterno.ELEMENTS_ALERTAINTERNO.cxTexto).type('Teste');
         cy.get(elAlertaInterno.ELEMENTS_ALERTAINTERNO.btnEnviar).click();
-
     })
-})
+
+});

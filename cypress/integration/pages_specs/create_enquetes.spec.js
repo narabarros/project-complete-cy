@@ -10,7 +10,7 @@ describe('Criacao de enquete', () => {
         Login.loginGestor();
     })
 
-    it.only('Criacao de enquete', () => {
+    it('Criacao de enquete', () => {
         cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlNewEnquete);
         cy.get(elEnquete.ELEMENTS_ENQUETE.btnCriarEnquete).click();
         cy.get(elEnquete.ELEMENTS_ENQUETE.cxtxtNome).type('TesteNow2');
@@ -31,4 +31,5 @@ describe('Criacao de enquete', () => {
         cy.get(elEnquete.ELEMENTS_ENQUETE.selectEnquete).select('TesteNow2');
         cy.get(elEnquete.ELEMENTS_ENQUETE.BtnCriarStatus).click();
     })
-})
+
+});

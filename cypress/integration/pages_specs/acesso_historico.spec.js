@@ -11,9 +11,9 @@ describe('Acesso ao historico', () => {
     })
 
     it('Pesquisa no historico', () => {
-
         cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlHistorico);
         cy.get(elHistorico.ELEMENTS_HISTORICO.cxCampoTelefone).type('(14) 99704-5503', {force: true});
         cy.get(elHistorico.ELEMENTS_HISTORICO.btnFiltrarHistorico).click({force: true});
     })
-})
+
+});
