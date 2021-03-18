@@ -6,6 +6,7 @@ import Logout from '../../support/pages/logout.js';
 import cardAtendimento from '../../support/pages/cardAtendimento.js';
 const elContato = require('../../support/elements/contato.js');
 const elAtivo = require('../../support/elements/ativo.js');
+const elCardAtendimento = require('../../support/elements/cardAtendimento.js');
 
 describe('Tela de contato - Envio de ativo', () => {
 
@@ -75,7 +76,8 @@ describe('Tela de contato - Envio de ativo', () => {
     afterEach(() => {
         Logout.logout();
         Login.loginGestor();
-        cardAtendimento.finalizacaoCardStatus();
+        cy.wait(3000);
+        cardAtendimento.finalizacaoCardStatus(elCardAtendimento.ELEMENTS_CARD_ATENDIMENTO.setorCardContatos);
     })
 
 })

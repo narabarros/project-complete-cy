@@ -3,9 +3,9 @@ const elAtivo = require('../elements/ativo.js');
 const elCardAtendimento = require('../elements/cardAtendimento.js')
 
 class cardAtendimento {
-    finalizacaoCardStatus() {
-        cy.wait(2000);
-        cy.get(elCardAtendimento.ELEMENTS_CARD_ATENDIMENTO.setorCard).click();
+    
+    finalizacaoCardStatus(setorCard) {
+        cy.get(setorCard).click();
         cy.wait(2000);
         cy.get(elCardAtendimento.ELEMENTS_CARD_ATENDIMENTO.encontraCard).then(($btn) => {
             const a = $btn.attr('data-test');

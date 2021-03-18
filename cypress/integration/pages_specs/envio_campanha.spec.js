@@ -74,4 +74,5 @@ describe('Envio de Campanha pelo sistema', () => {
       cy.get(elCampanha.ELEMENTS_CAMPANHA.salvarCampanha).click();
       cy.url().should('contains', elBase.ELEMENTS_BASE_URL.baseUrlCampanha);
    })
-})
+
+});

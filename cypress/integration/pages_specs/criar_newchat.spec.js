@@ -24,4 +24,5 @@ describe('Criacao de Newchat', () => {
         cy.get(elNewchat.ELEMENTS_NEWCHAT.btnProx2).click({force: true});
         cy.get(elNewchat.ELEMENTS_NEWCHAT.btnProx3).click({force: true});
     })
-})
+
+});

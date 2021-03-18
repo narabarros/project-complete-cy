@@ -32,7 +32,9 @@ describe('Acesso a relatorios', () => {
         cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlRelatorioGatilho);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.cxCanalRelatorioGatilho).select('waweb-30');
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoFiltrarRelatorioGatilho).click();
+        cy.wait(2000);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoExportarRelatorioGatilho).click({force: true});
+        cy.wait(2000);
         cy.get (elRelatorios.ELEMENTS_RELATORIOS.botaoBaixarRelatorioGatilho).click({force: true});
     })
 

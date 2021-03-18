@@ -4,7 +4,6 @@ import Login from '../../support/pages/login.js';
 const elBaseUrl = require ('../../support/elements/urls_acessos.js');
 const elcriarsetor = require ('../../support/elements/criarsetor.js');
 
-
 describe('Criar setor', () => {
 
     before(() => {
@@ -17,4 +16,5 @@ describe('Criar setor', () => {
         cy.get(elcriarsetor.ELEMENTS_CRIARSETOR.cxNomeSetor).type('Teste');
         cy.get(elcriarsetor.ELEMENTS_CRIARSETOR.btnSalvarSetor).click();
     })
+
 })
