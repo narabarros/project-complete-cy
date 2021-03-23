@@ -14,20 +14,6 @@ describe('Ações em Massa', () => {
         cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.btnFiltrar).click();
     })
 
-    it('Finalização de Atendimento em Massa (Selecionar Todos)', () => {
-        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.selecionarAcao).select(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.acaoFinalizacaoAtendimentos);
-        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.selecionarStatusFinalizacao).select(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.statusFinalizacao);
-        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.btnSelecionarTodos).click();
-        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.btnIniciarAcaoEmMassa).click();
-    })
-
-    it('Finalização de Atendimento em Massa (Selecionar Um por Um)', () => {
-        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.selecionarAcao).select(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.acaoFinalizacaoAtendimentos);
-        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.selecionarStatusFinalizacao).select(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.statusFinalizacao);
-        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.btnSelecionarUmPorUm).click({multiple: true});
-        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.btnIniciarAcaoEmMassa).click();
-    })
-
     it('Transferencia de Setor em Massa (Selecionar Todos)', () => {
         cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.selecionarAcao).select(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.acaoTransferenciaDeSetor);
         cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.selecionarSetor).select(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.novoSetor);
@@ -66,6 +52,20 @@ describe('Ações em Massa', () => {
     it('Alterar Status de Classificação em Massa (Selecionar Um por Um)', () => {
         cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.selecionarAcao).select(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.acaoClassificacaoDeAtendimentos);
         cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.selecionarClassificacao).select(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.novaClassificacao);
+        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.btnSelecionarUmPorUm).click({multiple: true});
+        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.btnIniciarAcaoEmMassa).click();
+    })
+
+    it('Finalização de Atendimento em Massa (Selecionar Todos)', () => {
+        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.selecionarAcao).select(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.acaoFinalizacaoAtendimentos);
+        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.selecionarStatusFinalizacao).select(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.statusFinalizacao);
+        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.btnSelecionarTodos).click();
+        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.btnIniciarAcaoEmMassa).click();
+    })
+
+    it('Finalização de Atendimento em Massa (Selecionar Um por Um)', () => {
+        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.selecionarAcao).select(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.acaoFinalizacaoAtendimentos);
+        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.selecionarStatusFinalizacao).select(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.statusFinalizacao);
         cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.btnSelecionarUmPorUm).click({multiple: true});
         cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.btnIniciarAcaoEmMassa).click();
     })
