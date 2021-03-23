@@ -4,7 +4,7 @@ import Login from '../../support/pages/login.js';
 const elBaseUrl = require ('../../support/elements/urls_acessos.js');
 const elAcoesEmMassa = require ('../../support/elements/acoesEmMassa.js');
 
-describe('Acoes em Massa', () => {
+describe('Ações em Massa', () => {
 
     beforeEach(() => {
         Login.loginGestor();
@@ -68,6 +68,37 @@ describe('Acoes em Massa', () => {
         cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.selecionarClassificacao).select(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.novaClassificacao);
         cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.btnSelecionarUmPorUm).click({multiple: true});
         cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.btnIniciarAcaoEmMassa).click();
+    })
+
+});
+
+describe('Filtros Ações em Massa', () => {
+
+    beforeEach(() => {
+        Login.loginGestor();
+        cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlAcoesEmMassa);
+        cy.url().should('contains', elBaseUrl.ELEMENTS_BASE_URL.baseUrlAcoesEmMassa);
+        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.btnIniciar).click();
+    })
+
+    it('Filtrar por Setor', () => {
+        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.selecionarFiltroSetor).select(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.filtroSetor);
+        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.btnFiltrar).click();
+    })
+
+    it('Filtrar por Classificação', () => {
+        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.selecionarFiltroClassificacao).select(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.filtroClassificacao);
+        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.btnFiltrar).click();
+    })
+
+    it('Filtrar por Canal de Entrada', () => {
+        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.selecionarFiltroCanalEntrada).select(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.filtroCanalEntrada);
+        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.btnFiltrar).click();
+    })
+
+    it('Filtrar por Automatico', () => {
+        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.selecionarFiltroAutomatico).select(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.filtroAutomatico);
+        cy.get(elAcoesEmMassa.ELEMENTS_ACOESEMMASSA.btnFiltrar).click();
     })
 
 });

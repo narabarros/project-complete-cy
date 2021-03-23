@@ -17,4 +17,12 @@ export const ELEMENTS_ACOESEMMASSA = {
     btnSelecionarTodos: '[for="select-all-histories"]',
     btnSelecionarUmPorUm: '[ga-event="mktzap_checkbox_action_attendance_batch_close_new_history"]',
     btnIniciarAcaoEmMassa: '[ga-event="mktzap_bt_action_attendance_batch_close_new_startbatch"]',
+    selecionarFiltroSetor: '[ng-model="vmBatchCloseNewCtrl.queue.filters.sector_id"]',
+    filtroSetor: 'number:1',
+    selecionarFiltroClassificacao: '[ng-model="vmBatchCloseNewCtrl.queue.filters.status_id"]',
+    filtroClassificacao: '38',
+    selecionarFiltroCanalEntrada: '[ng-model="vmBatchCloseNewCtrl.queue.filters.channel"]',
+    filtroCanalEntrada: 'string:Whatsapp',
+    selecionarFiltroAutomatico: '[ng-model="vmBatchCloseNewCtrl.queue.filters.is_auto"]',
+    filtroAutomatico: 'true',
 }
