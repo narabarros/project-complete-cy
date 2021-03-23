@@ -34,5 +34,5 @@ export const ELEMENTS_BASE_URL = {
     baseUrlDistribuicao: 'https://qa-poli.infranw.com.br/rules/attendances/automatic-distribution',
     baseUrlRelatorioBackground: 'https://qa-poli.infranw.com.br/general-settings/settings',
     baseUrlConfigsGerais: 'https://qa-poli.infranw.com.br/general-settings/settings#config',
-
+    baseUrlAcoesEmMassa: 'https://qa-poli.infranw.com.br/batch-close',
 }
