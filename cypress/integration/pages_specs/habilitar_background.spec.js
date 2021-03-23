@@ -16,7 +16,8 @@ describe('Acesso a relatorios', () => {
         cy.visit(elBaseUrl.ELEMENTS_BASE_URL.baseUrlConfigsGerais);
         cy.get(elBackground.ELEMENTS_BACKGROUND.btnRelatorios).click();
         cy.get(elBackground.ELEMENTS_BACKGROUND.btnAtivar).click();
-        //cy.get(elBackground.ELEMENTS_BACKGROUND.campoHist).click();
+        cy.wait(2000);
+        cy.get(elBackground.ELEMENTS_BACKGROUND.btnSalvar).click();
     })
 
 });
