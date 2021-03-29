@@ -3,3 +3,4 @@ package-lock.json
 screenshots
 videos
 debug.log
+/cypress/report
