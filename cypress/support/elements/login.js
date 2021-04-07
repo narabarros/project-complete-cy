@@ -3,8 +3,8 @@ export const ELEMENTS_LOGIN = {
     userName:'[data-test="login-input-user_name"]',
     userPassword: '[data-test="login-input-password"]',
     btnLogin: '[data-test="login-button-login"]',
-    emailGestor: 'gestorsandra@gestor.com',
-    senhaGestor: '123mudar',
+    emailGestor: 'gesto@auto.com',
+    senhaGestor: 'gesto@auto.com',
     emailOperador: 'operadorsandra@operador.com',
     senhaOperador: '123mudar',
     

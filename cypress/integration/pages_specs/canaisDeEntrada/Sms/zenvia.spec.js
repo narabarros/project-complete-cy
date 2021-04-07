@@ -320,7 +320,8 @@ describe('Alterar setor do canal na tela de SMS', () => {
     })
 
     it('Sucesso ao alterar o setor do canal', () => {
-        cy.get(elSms.ELEMENTS_SMS.selectSetorTelaSMS).select(elSms.ELEMENTS_SMS.novoOptionSetorPadrao);
+        cy.get(elSms.ELEMENTS_SMS.selectSetorTelaSMS).select(elSms.ELEMENTS_SMS.optionSetorPadrao);
+        cy.wait(2000);
         cy.get(elSms.ELEMENTS_SMS.spanMensagem).should('have.text', 'Os dados foram atualizados com sucesso!');
     })
 
