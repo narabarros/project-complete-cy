@@ -17,7 +17,7 @@ describe('Acesso ao Mktzap', () => {
         Logout.logout();       
     })
 
-    it.only('Login e Logout como Lord', () => {
+    it('Login e Logout como Lord', () => {
         Login.loginLord();
         Logout.logout();
     })
