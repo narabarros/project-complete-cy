@@ -4,7 +4,7 @@
   "reporter": "mochawesome",
   "reporterOptions": {
     "reportDir": "cypress/report/mochaawesome",
-    "overWrite": false,
+    "overwrite": false,
     "html": true,
     "json": false,
     "timestamps": "mmddyyyy_HHMMss",

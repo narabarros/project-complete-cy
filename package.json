@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "cypress": "cypress open",
-    "report": "cypress run --config video=false --reporter mochawesome",
-    "report:headed": "cypress run --headed --config video=false --reporter mochawesome",
-    "spec": "cypress run --config video=false --reporter mochawesome --spec",
+    "report": "cypress run --headless --browser chrome --config video=false --reporter mochawesome",
+    "report:headed": "cypress run --headed --browser chrome --config video=false --reporter mochawesome",
+    "spec": "cypress run --headless --browser chrome --config video=false --reporter mochawesome --spec",
     "spec:headed": "cypress run --headed --config video=false --reporter mochawesome --spec",
-    "test": "cypress run --headed"
+    "test": "cypress run --headed --browser chrome"
   },
   "keywords": [],
   "author": "Nara Barros, Sandra Pavan",
