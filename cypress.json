@@ -1,6 +1,17 @@
 {
   "chromeWebSecurity": false,
-  "projectId": "dydqwm"
-  
-
+  "projectId": "dydqwm",
+  "reporter": "mochawesome",
+  "reporterOptions": {
+    "reportDir": "cypress/report/mochaawesome",
+    "overwrite": false,
+    "html": true,
+    "json": false,
+    "timestamps": "mmddyyyy_HHMMss",
+    "reportTitle": "Relatório Suite de Teste Mktzap",
+    "cdn": true,
+    "charts": true,
+    "record": false,
+    "video": false
+  }
 }
