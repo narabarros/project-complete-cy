@@ -4,8 +4,12 @@
   "description": "Automatização do Mktzap - Smoke",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cypress": "cypress open"
+    "cypress": "cypress open",
+    "report": "cypress run --config video=false --reporter mochawesome",
+    "report:headed": "cypress run --headed --config video=false --reporter mochawesome",
+    "spec": "cypress run --config video=false --reporter mochawesome --spec",
+    "spec:headed": "cypress run --headed --config video=false --reporter mochawesome --spec",
+    "test": "cypress run --headed"
   },
   "keywords": [],
   "author": "Nara Barros, Sandra Pavan",
@@ -14,7 +18,9 @@
     "chance": "^1.1.5",
     "cypress": "",
     "cypress-file-upload": "^4.1.1",
-    "cypress-xpath": "^1.6.0"
-  },
-  "devDependencies": {}
+    "cypress-xpath": "^1.6.0",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0"
+  }
 }
