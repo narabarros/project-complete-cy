@@ -28,9 +28,9 @@ describe('Cadastro Zenvia (SMS)', () => {
         cy.get(elSms.ELEMENTS_SMS.inputNome).type(elSms.ELEMENTS_SMS.nome);
         cy.get(elSms.ELEMENTS_SMS.selectSetorPadrao).select(elSms.ELEMENTS_SMS.optionSetorPadrao);
         cy.get(elSms.ELEMENTS_SMS.inputProcessor).type(elSms.ELEMENTS_SMS.processor);
-        cy.get(elSms.ELEMENTS_SMS.selectTipoSms).select(elSms.ELEMENTS_SMS.optionTipoSms);
-        cy.get(elSms.ELEMENTS_SMS.inputConta).type(elSms.ELEMENTS_SMS.conta);
-        cy.get(elSms.ELEMENTS_SMS.inputSenha).type(elSms.ELEMENTS_SMS.senha);
+        cy.get(elSms.ELEMENTS_SMS.selectTipoSmsZenvia).select(elSms.ELEMENTS_SMS.optionTipoSms);
+        cy.get(elSms.ELEMENTS_SMS.inputContaZenvia).type(elSms.ELEMENTS_SMS.conta);
+        cy.get(elSms.ELEMENTS_SMS.inputSenhaZenvia).type(elSms.ELEMENTS_SMS.senha);
         cy.get(elSms.ELEMENTS_SMS.inputIdAgrupador).type(elSms.ELEMENTS_SMS.idAgrupador);
         cy.get(elSms.ELEMENTS_SMS.inputUrlCallbackZenvia).should('have.value', elSms.ELEMENTS_SMS.urlCallback);
         cy.get(elSms.ELEMENTS_SMS.inputUrlCallbackZenvia). should('have.attr', 'readonly');
@@ -45,9 +45,9 @@ describe('Cadastro Zenvia (SMS)', () => {
         cy.get(elSms.ELEMENTS_SMS.btnAtivo).should('have.class', elSms.ELEMENTS_SMS.checkActive);
         cy.get(elSms.ELEMENTS_SMS.selectSetorPadrao).select(elSms.ELEMENTS_SMS.optionSetorPadrao);
         cy.get(elSms.ELEMENTS_SMS.inputProcessor).type(elSms.ELEMENTS_SMS.processor);
-        cy.get(elSms.ELEMENTS_SMS.selectTipoSms).select(elSms.ELEMENTS_SMS.optionTipoSms);
-        cy.get(elSms.ELEMENTS_SMS.inputConta).type(elSms.ELEMENTS_SMS.conta);
-        cy.get(elSms.ELEMENTS_SMS.inputSenha).type(elSms.ELEMENTS_SMS.senha);
+        cy.get(elSms.ELEMENTS_SMS.selectTipoSmsZenvia).select(elSms.ELEMENTS_SMS.optionTipoSms);
+        cy.get(elSms.ELEMENTS_SMS.inputContaZenvia).type(elSms.ELEMENTS_SMS.conta);
+        cy.get(elSms.ELEMENTS_SMS.inputSenhaZenvia).type(elSms.ELEMENTS_SMS.senha);
         cy.get(elSms.ELEMENTS_SMS.inputIdAgrupador).type(elSms.ELEMENTS_SMS.idAgrupador);
         cy.get(elSms.ELEMENTS_SMS.inputUrlCallbackZenvia).should('have.value', elSms.ELEMENTS_SMS.urlCallback);
         cy.get(elSms.ELEMENTS_SMS.inputUrlCallbackZenvia). should('have.attr', 'readonly');
@@ -60,9 +60,9 @@ describe('Cadastro Zenvia (SMS)', () => {
         cy.get(elSms.ELEMENTS_SMS.inputNome).type(elSms.ELEMENTS_SMS.nome);
         cy.get(elSms.ELEMENTS_SMS.selectSetorPadrao).select(elSms.ELEMENTS_SMS.optionSetorPadrao);
         cy.get(elSms.ELEMENTS_SMS.inputProcessor).type(elSms.ELEMENTS_SMS.processor);
-        cy.get(elSms.ELEMENTS_SMS.selectTipoSms).select(elSms.ELEMENTS_SMS.optionTipoSms);
-        cy.get(elSms.ELEMENTS_SMS.inputConta).type(elSms.ELEMENTS_SMS.conta);
-        cy.get(elSms.ELEMENTS_SMS.inputSenha).type(elSms.ELEMENTS_SMS.senha);
+        cy.get(elSms.ELEMENTS_SMS.selectTipoSmsZenvia).select(elSms.ELEMENTS_SMS.optionTipoSms);
+        cy.get(elSms.ELEMENTS_SMS.inputContaZenvia).type(elSms.ELEMENTS_SMS.conta);
+        cy.get(elSms.ELEMENTS_SMS.inputSenhaZenvia).type(elSms.ELEMENTS_SMS.senha);
         cy.get(elSms.ELEMENTS_SMS.inputIdAgrupador).type(elSms.ELEMENTS_SMS.idAgrupador);
         cy.get(elSms.ELEMENTS_SMS.inputUrlCallbackZenvia).should('have.value', elSms.ELEMENTS_SMS.urlCallback);
         cy.get(elSms.ELEMENTS_SMS.inputUrlCallbackZenvia). should('have.attr', 'readonly');
@@ -78,9 +78,9 @@ describe('Cadastro Zenvia (SMS)', () => {
         cy.get(elSms.ELEMENTS_SMS.spanHelpBlock).should('have.attr', 'ng-show');
         cy.get(elSms.ELEMENTS_SMS.selectSetorPadrao).select(elSms.ELEMENTS_SMS.optionSetorPadrao);
         cy.get(elSms.ELEMENTS_SMS.inputProcessor).type(elSms.ELEMENTS_SMS.processor);
-        cy.get(elSms.ELEMENTS_SMS.selectTipoSms).select(elSms.ELEMENTS_SMS.optionTipoSms);
-        cy.get(elSms.ELEMENTS_SMS.inputConta).type(elSms.ELEMENTS_SMS.conta);
-        cy.get(elSms.ELEMENTS_SMS.inputSenha).type(elSms.ELEMENTS_SMS.senha);
+        cy.get(elSms.ELEMENTS_SMS.selectTipoSmsZenvia).select(elSms.ELEMENTS_SMS.optionTipoSms);
+        cy.get(elSms.ELEMENTS_SMS.inputContaZenvia).type(elSms.ELEMENTS_SMS.conta);
+        cy.get(elSms.ELEMENTS_SMS.inputSenhaZenvia).type(elSms.ELEMENTS_SMS.senha);
         cy.get(elSms.ELEMENTS_SMS.inputIdAgrupador).type(elSms.ELEMENTS_SMS.idAgrupador);
         cy.get(elSms.ELEMENTS_SMS.inputUrlCallbackZenvia).should('have.value', elSms.ELEMENTS_SMS.urlCallback);
         cy.get(elSms.ELEMENTS_SMS.inputUrlCallbackZenvia). should('have.attr', 'readonly');
@@ -94,9 +94,9 @@ describe('Cadastro Zenvia (SMS)', () => {
         cy.get(elSms.ELEMENTS_SMS.selectSetorPadrao).select('');
         cy.get(elSms.ELEMENTS_SMS.spanHelpBlock).should('have.attr', 'ng-show');
         cy.get(elSms.ELEMENTS_SMS.inputProcessor).type(elSms.ELEMENTS_SMS.processor);
-        cy.get(elSms.ELEMENTS_SMS.selectTipoSms).select(elSms.ELEMENTS_SMS.optionTipoSms);
-        cy.get(elSms.ELEMENTS_SMS.inputConta).type(elSms.ELEMENTS_SMS.conta);
-        cy.get(elSms.ELEMENTS_SMS.inputSenha).type(elSms.ELEMENTS_SMS.senha);
+        cy.get(elSms.ELEMENTS_SMS.selectTipoSmsZenvia).select(elSms.ELEMENTS_SMS.optionTipoSms);
+        cy.get(elSms.ELEMENTS_SMS.inputContaZenvia).type(elSms.ELEMENTS_SMS.conta);
+        cy.get(elSms.ELEMENTS_SMS.inputSenhaZenvia).type(elSms.ELEMENTS_SMS.senha);
         cy.get(elSms.ELEMENTS_SMS.inputIdAgrupador).type(elSms.ELEMENTS_SMS.idAgrupador);
         cy.get(elSms.ELEMENTS_SMS.inputUrlCallbackZenvia).should('have.value', elSms.ELEMENTS_SMS.urlCallback);
         cy.get(elSms.ELEMENTS_SMS.inputUrlCallbackZenvia). should('have.attr', 'readonly');
@@ -109,10 +109,10 @@ describe('Cadastro Zenvia (SMS)', () => {
         cy.get(elSms.ELEMENTS_SMS.inputNome).type(elSms.ELEMENTS_SMS.nome);
         cy.get(elSms.ELEMENTS_SMS.selectSetorPadrao).select(elSms.ELEMENTS_SMS.optionSetorPadrao);
         cy.get(elSms.ELEMENTS_SMS.inputProcessor).type(elSms.ELEMENTS_SMS.processor);
-        cy.get(elSms.ELEMENTS_SMS.selectTipoSms).select(elSms.ELEMENTS_SMS.optionTipoSms);
-        cy.get(elSms.ELEMENTS_SMS.inputConta).type(elSms.ELEMENTS_SMS.conta).clear();
+        cy.get(elSms.ELEMENTS_SMS.selectTipoSmsZenvia).select(elSms.ELEMENTS_SMS.optionTipoSms);
+        cy.get(elSms.ELEMENTS_SMS.inputContaZenvia).type(elSms.ELEMENTS_SMS.conta).clear();
         cy.get(elSms.ELEMENTS_SMS.spanHelpBlock).should('have.attr', 'ng-show');
-        cy.get(elSms.ELEMENTS_SMS.inputSenha).type(elSms.ELEMENTS_SMS.senha);
+        cy.get(elSms.ELEMENTS_SMS.inputSenhaZenvia).type(elSms.ELEMENTS_SMS.senha);
         cy.get(elSms.ELEMENTS_SMS.inputIdAgrupador).type(elSms.ELEMENTS_SMS.idAgrupador);
         cy.get(elSms.ELEMENTS_SMS.inputUrlCallbackZenvia).should('have.value', elSms.ELEMENTS_SMS.urlCallback);
         cy.get(elSms.ELEMENTS_SMS.inputUrlCallbackZenvia). should('have.attr', 'readonly');
@@ -125,9 +125,9 @@ describe('Cadastro Zenvia (SMS)', () => {
         cy.get(elSms.ELEMENTS_SMS.inputNome).type(elSms.ELEMENTS_SMS.nome);
         cy.get(elSms.ELEMENTS_SMS.selectSetorPadrao).select(elSms.ELEMENTS_SMS.optionSetorPadrao);
         cy.get(elSms.ELEMENTS_SMS.inputProcessor).type(elSms.ELEMENTS_SMS.processor);
-        cy.get(elSms.ELEMENTS_SMS.selectTipoSms).select(elSms.ELEMENTS_SMS.optionTipoSms);
-        cy.get(elSms.ELEMENTS_SMS.inputConta).type(elSms.ELEMENTS_SMS.conta);
-        cy.get(elSms.ELEMENTS_SMS.inputSenha).type(elSms.ELEMENTS_SMS.senha).clear();
+        cy.get(elSms.ELEMENTS_SMS.selectTipoSmsZenvia).select(elSms.ELEMENTS_SMS.optionTipoSms);
+        cy.get(elSms.ELEMENTS_SMS.inputContaZenvia).type(elSms.ELEMENTS_SMS.conta);
+        cy.get(elSms.ELEMENTS_SMS.inputSenhaZenvia).type(elSms.ELEMENTS_SMS.senha).clear();
         cy.get(elSms.ELEMENTS_SMS.spanHelpBlock).should('have.attr', 'ng-show');
         cy.get(elSms.ELEMENTS_SMS.inputIdAgrupador).type(elSms.ELEMENTS_SMS.idAgrupador);
         cy.get(elSms.ELEMENTS_SMS.inputUrlCallbackZenvia).should('have.value', elSms.ELEMENTS_SMS.urlCallback);
@@ -141,9 +141,9 @@ describe('Cadastro Zenvia (SMS)', () => {
         cy.get(elSms.ELEMENTS_SMS.inputNome).type(elSms.ELEMENTS_SMS.nome);
         cy.get(elSms.ELEMENTS_SMS.selectSetorPadrao).select(elSms.ELEMENTS_SMS.optionSetorPadrao);
         cy.get(elSms.ELEMENTS_SMS.inputProcessor).type(elSms.ELEMENTS_SMS.processor);
-        cy.get(elSms.ELEMENTS_SMS.selectTipoSms).select(elSms.ELEMENTS_SMS.optionTipoSms);
-        cy.get(elSms.ELEMENTS_SMS.inputConta).type(elSms.ELEMENTS_SMS.conta);
-        cy.get(elSms.ELEMENTS_SMS.inputSenha).type(elSms.ELEMENTS_SMS.senha);
+        cy.get(elSms.ELEMENTS_SMS.selectTipoSmsZenvia).select(elSms.ELEMENTS_SMS.optionTipoSms);
+        cy.get(elSms.ELEMENTS_SMS.inputContaZenvia).type(elSms.ELEMENTS_SMS.conta);
+        cy.get(elSms.ELEMENTS_SMS.inputSenhaZenvia).type(elSms.ELEMENTS_SMS.senha);
         cy.get(elSms.ELEMENTS_SMS.inputIdAgrupador).type(elSms.ELEMENTS_SMS.idAgrupador).clear();
         cy.get(elSms.ELEMENTS_SMS.spanHelpBlock).should('have.attr', 'ng-show');
         cy.get(elSms.ELEMENTS_SMS.inputUrlCallbackZenvia).should('have.value', elSms.ELEMENTS_SMS.urlCallback);
@@ -216,21 +216,21 @@ describe('Editar cadastro Zenvia (SMS)', () => {
     })
 
     it('Sucesso ao editar o tipo de sms do canal', () => {
-        cy.get(elSms.ELEMENTS_SMS.selectTipoSms).select(elSms.ELEMENTS_SMS.novoOptionTipoSms);
+        cy.get(elSms.ELEMENTS_SMS.selectTipoSmsZenvia).select(elSms.ELEMENTS_SMS.novoOptionTipoSms);
         cy.get(elSms.ELEMENTS_SMS.btnSalvar).click();
         cy.get(elSms.ELEMENTS_SMS.spanMensagem).should('have.text', 'Os dados foram atualizados com sucesso!');
         cy.get(elSms.ELEMENTS_SMS.modalCadastro).should('have.attr', 'aria-hidden');
     })
 
     it('Sucesso ao editar a conta do canal', () => {
-        cy.get(elSms.ELEMENTS_SMS.inputConta).clear().type(elSms.ELEMENTS_SMS.novaConta);
+        cy.get(elSms.ELEMENTS_SMS.inputContaZenvia).clear().type(elSms.ELEMENTS_SMS.novaConta);
         cy.get(elSms.ELEMENTS_SMS.btnSalvar).click();
         cy.get(elSms.ELEMENTS_SMS.spanMensagem).should('have.text', 'Os dados foram atualizados com sucesso!');
         cy.get(elSms.ELEMENTS_SMS.modalCadastro).should('have.attr', 'aria-hidden');
     })
 
     it('Sucesso ao editar a senha do canal', () => {
-        cy.get(elSms.ELEMENTS_SMS.inputSenha).clear().type(elSms.ELEMENTS_SMS.novaSenha);
+        cy.get(elSms.ELEMENTS_SMS.inputSenhaZenvia).clear().type(elSms.ELEMENTS_SMS.novaSenha);
         cy.get(elSms.ELEMENTS_SMS.btnSalvar).click();
         cy.get(elSms.ELEMENTS_SMS.spanMensagem).should('have.text', 'Os dados foram atualizados com sucesso!');
         cy.get(elSms.ELEMENTS_SMS.modalCadastro).should('have.attr', 'aria-hidden');
@@ -276,7 +276,7 @@ describe('Editar cadastro Zenvia (SMS)', () => {
     })
 
     it('Falha ao editar o tipo de sms do canal', () => {
-        cy.get(elSms.ELEMENTS_SMS.selectTipoSms).select('');
+        cy.get(elSms.ELEMENTS_SMS.selectTipoSmsZenvia).select('');
         cy.get(elSms.ELEMENTS_SMS.btnSalvar).click();
         cy.get(elSms.ELEMENTS_SMS.spanHelpBlock).should('have.attr', 'ng-show');
         cy.get(elSms.ELEMENTS_SMS.spanMensagem).should('have.text', 'Preencha os campos obrigatórios.');
@@ -284,7 +284,7 @@ describe('Editar cadastro Zenvia (SMS)', () => {
     })
 
     it('Falha ao editar a conta do canal', () => {
-        cy.get(elSms.ELEMENTS_SMS.inputConta).clear();
+        cy.get(elSms.ELEMENTS_SMS.inputContaZenvia).clear();
         cy.get(elSms.ELEMENTS_SMS.btnSalvar).click();
         cy.get(elSms.ELEMENTS_SMS.spanHelpBlock).should('have.attr', 'ng-show');
         cy.get(elSms.ELEMENTS_SMS.spanMensagem).should('have.text', 'Preencha os campos obrigatórios.');
@@ -292,7 +292,7 @@ describe('Editar cadastro Zenvia (SMS)', () => {
     })
 
     it('Falha ao editar a senha do canal', () => {
-        cy.get(elSms.ELEMENTS_SMS.inputSenha).clear();
+        cy.get(elSms.ELEMENTS_SMS.inputSenhaZenvia).clear();
         cy.get(elSms.ELEMENTS_SMS.btnSalvar).click();
         cy.get(elSms.ELEMENTS_SMS.spanHelpBlock).should('have.attr', 'ng-show');
         cy.get(elSms.ELEMENTS_SMS.spanMensagem).should('have.text', 'Preencha os campos obrigatórios.');

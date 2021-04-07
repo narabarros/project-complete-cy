@@ -252,7 +252,7 @@ describe('Alterar setor do canal na tela de SMS', () => {
 
 })
 
-describe('Excluir cadastros Movile (SMS)', () => {
+describe('Excluir cadastros Classe A (SMS)', () => {
 
     beforeEach(() => {
         Login.loginLord();

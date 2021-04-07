@@ -125,7 +125,7 @@ describe('Cadastro Movile (SMS)', () => {
 
 })
 
-describe('Editar cadastro Best Use (SMS)', () => {
+describe('Editar cadastro Movile (SMS)', () => {
 
     beforeEach(() => {
         Login.loginLord();
