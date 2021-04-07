@@ -132,7 +132,7 @@ describe('Cadastro Pontal (SMS)', () => {
 
 })
 
-describe.only('Editar cadastro Pontal (SMS)', () => {
+describe('Editar cadastro Pontal (SMS)', () => {
 
     beforeEach(() => {
         Login.loginLord();

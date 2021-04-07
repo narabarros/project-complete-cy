@@ -110,7 +110,7 @@ describe('Cadastro Classe A (SMS)', () => {
 
 })
 
-describe.only('Editar cadastro Classe A (SMS)', () => {
+describe('Editar cadastro Classe A (SMS)', () => {
 
     beforeEach(() => {
         Login.loginLord();
