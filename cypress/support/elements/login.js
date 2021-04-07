@@ -12,6 +12,6 @@ export const ELEMENTS_LOGIN = {
     userNameLord: '[data-test="wolologin-input-user_name"]',
     userPasswordLord: '[data-test="wolologin-input-password"]',
     btnLoginLord: '[data-test="wolologin-input-login"]',
-    emailLord: 'nara.silva@gruponewway.com.br',
+    emailLord: 'sandra@gruponewway.com.br',
     senhaLord: '123456A'
 }

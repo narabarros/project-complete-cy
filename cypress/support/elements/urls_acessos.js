@@ -35,4 +35,5 @@ export const ELEMENTS_BASE_URL = {
     baseUrlRelatorioBackground: 'https://qa-poli.infranw.com.br/general-settings/settings',
     baseUrlConfigsGerais: 'https://qa-poli.infranw.com.br/general-settings/settings#config',
     baseUrlAcoesEmMassa: 'https://qa-poli.infranw.com.br/batch-close',
+    baseUrlCanaisEntradaSms: 'https://qa-poli.infranw.com.br/sms'
 }
