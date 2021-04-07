@@ -16,8 +16,8 @@ class Login{
     cy.get(elLogin.ELEMENTS_LOGIN.userNameLord).type(elLogin.ELEMENTS_LOGIN.emailLord);     
     cy.get(elLogin.ELEMENTS_LOGIN.userPasswordLord).type(elLogin.ELEMENTS_LOGIN.senhaLord);
     cy.get(elLogin.ELEMENTS_LOGIN.btnLoginLord).click();
-    cy.wait(2000);cy.wait(2000);
     cy.visit(elBase.ELEMENTS_BASE_URL.baseUrlLogado);
+    cy.wait(2000);
     cy.url().should('contains', elBase.ELEMENTS_BASE_URL.baseUrlLogado);
   }
 
