@@ -20,7 +20,6 @@ describe('Acesso ao Mktzap', () => {
     it('Login e Logout como Lord', () => {
         Login.loginLord();
         Logout.logout();
-
     })
 
 });

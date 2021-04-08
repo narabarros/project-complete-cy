@@ -2,6 +2,7 @@
 export const ELEMENTS_BASE_URL = {
     baseUrl: 'https://qa-poli.infranw.com.br/login',
     baseUrlLord: 'https://qa-poli.infranw.com.br/wolologin',
+    baseUrlRedirectLord: 'https://qa-poli.infranw.com.br/__/',
     baseUrlLogado:'https://qa-poli.infranw.com.br/chat',
     baseUrlLogout: 'https://qa-poli.infranw.com.br/login',
     baseUrlMaling: 'https://qa-poli.infranw.com.br/mailing-list',
@@ -35,4 +36,5 @@ export const ELEMENTS_BASE_URL = {
     baseUrlRelatorioBackground: 'https://qa-poli.infranw.com.br/general-settings/settings',
     baseUrlConfigsGerais: 'https://qa-poli.infranw.com.br/general-settings/settings#config',
     baseUrlAcoesEmMassa: 'https://qa-poli.infranw.com.br/batch-close',
+    baseUrlCanaisEntradaSms: 'https://qa-poli.infranw.com.br/sms'
 }
