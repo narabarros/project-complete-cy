@@ -16,7 +16,7 @@ class Login{
     cy.get(elLogin.ELEMENTS_LOGIN.userNameLord).type(elLogin.ELEMENTS_LOGIN.emailLord);     
     cy.get(elLogin.ELEMENTS_LOGIN.userPasswordLord).type(elLogin.ELEMENTS_LOGIN.senhaLord);
     cy.get(elLogin.ELEMENTS_LOGIN.btnLoginLord).click();
-    cy.url().should('contains', 'https://qa-poli.infranw.com.br/__/');
+    cy.url().should('contains', elBase.ELEMENTS_BASE_URL.baseUrlRedirectLord);
     cy.visit(elBase.ELEMENTS_BASE_URL.baseUrlLogado);
     cy.url().should('contains', elBase.ELEMENTS_BASE_URL.baseUrlLogado);
   }

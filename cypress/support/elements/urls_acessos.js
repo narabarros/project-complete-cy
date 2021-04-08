@@ -2,6 +2,7 @@
 export const ELEMENTS_BASE_URL = {
     baseUrl: 'https://qa-poli.infranw.com.br/login',
     baseUrlLord: 'https://qa-poli.infranw.com.br/wolologin',
+    baseUrlRedirectLord: 'https://qa-poli.infranw.com.br/__/',
     baseUrlLogado:'https://qa-poli.infranw.com.br/chat',
     baseUrlLogout: 'https://qa-poli.infranw.com.br/login',
     baseUrlMaling: 'https://qa-poli.infranw.com.br/mailing-list',
